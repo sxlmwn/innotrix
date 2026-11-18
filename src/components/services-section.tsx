@@ -1,287 +1,247 @@
 "use client";
 
 import { useState } from "react";
-import {
-  IconWorldWww,
-  IconDeviceMobile,
-  IconMessageChatbot,
-  IconCpu,
-  IconPhoneCall,
-  IconRobot,
-  IconChartBar,
-  IconDatabase,
-  IconCloudComputing,
-  IconArrowRight,
-  IconCheck,
-  IconX,
-} from "@tabler/icons-react";
+import { IconArrowRight, IconX, IconCheck } from "@tabler/icons-react";
 
 export interface ServiceItem {
   id: string;
-  icon: typeof IconWorldWww;
+  num: string;
   title: string;
   description: string;
   features: string[];
-  tag: string;
 }
 
 export const SERVICES: ServiceItem[] = [
   {
     id: "web-dev",
-    icon: IconWorldWww,
+    num: "01",
     title: "Web Development",
-    tag: "Core Engineering",
     description:
       "Modern, fast, and responsive websites built with the latest technologies. From business websites to complex web applications, we create digital experiences that convert visitors into customers.",
     features: [
-      "Custom Next.js & React Apps",
-      "High Conversion UI/UX Architecture",
-      "SEO & Core Web Vitals Optimization",
+      "Custom Next.js & React Architectures",
+      "Core Web Vitals & Conversion Optimization",
+      "Full-Stack Web Applications & CMS",
       "Enterprise E-Commerce Platforms",
     ],
   },
   {
     id: "mobile-dev",
-    icon: IconDeviceMobile,
+    num: "02",
     title: "Mobile App Development",
-    tag: "Native & Cross-Platform",
     description:
       "Native and cross-platform mobile apps for iOS and Android. We build intuitive, high-performance apps that users love and businesses rely on for growth.",
     features: [
-      "Flutter & React Native Architecture",
-      "Offline-First Data Sync",
-      "Biometric Authentication & Security",
-      "App Store & Google Play Launch",
+      "Cross-Platform Flutter & React Native",
+      "Biometric Authentication & Offline Sync",
+      "Intuitive UX/UI Design for iOS & Android",
+      "App Store & Google Play Deployment",
     ],
   },
   {
     id: "ai-chatbots",
-    icon: IconMessageChatbot,
+    num: "03",
     title: "AI Chatbots",
-    tag: "24/7 Intelligence",
     description:
       "AI customer-support and lead-qualification chatbots that work 24/7, answer instantly, book appointments, and hand over to a human when needed.",
     features: [
-      "LLM Integration with OpenAI & Anthropic",
-      "Automated Appointment Scheduling",
-      "CRM & WhatsApp Integrations",
-      "Human Handoff Guardrails",
+      "24/7 Multi-Lingual Automated Support",
+      "CRM & Calendar Appointment Booking",
+      "Proprietary Business Knowledge RAG",
+      "Seamless Human Agent Handoff",
     ],
   },
   {
     id: "automation",
-    icon: IconCpu,
+    num: "04",
     title: "Automation",
-    tag: "Process Optimization",
     description:
       "AI workflow automation and business-process automation, with integrations that save time, cut costs, and remove repetitive work.",
     features: [
-      "Multi-Tool Webhook & API Pipelines",
-      "Automated Invoice & Document Extraction",
-      "Lead Routing & Notification Systems",
-      "Zero-Error Repetitive Work Elimination",
+      "End-to-End Zapier / Make / API Pipelines",
+      "Automated Invoicing & Document Processing",
+      "Lead Routing & Notification Triggers",
+      "Zero-Error Repetitive Task Removal",
     ],
   },
   {
     id: "ai-calling",
-    icon: IconPhoneCall,
+    num: "05",
     title: "AI Calling Agents / Voice Agents",
-    tag: "Conversational Audio",
     description:
       "AI voice agents that handle phone calls, booking, support, and sales calls in a natural voice.",
     features: [
-      "Human-Like Ultra-Low Latency Voice",
-      "Inbound Support & Triage Handling",
-      "Outbound Appointment & Sales Reminders",
-      "Instant Call Transcription & Summary",
+      "Human-Like Conversational Speech",
+      "Inbound Customer Support & Triage",
+      "Outbound Call Confirmations & Reminders",
+      "Instant Transcription & CRM Sync",
     ],
   },
   {
     id: "ai-automation",
-    icon: IconRobot,
+    num: "06",
     title: "AI Automation",
-    tag: "Enterprise ML",
     description:
       "Intelligent automation, chatbots, voice agents, workflows, and machine learning solutions that streamline operations.",
     features: [
-      "End-to-End Autonomous Workflows",
-      "Proprietary Business Data RAG Models",
-      "Predictive Machine Learning Pipelines",
-      "Unified AI Operational Dashboards",
+      "Enterprise Multi-Agent Orchestration",
+      "Predictive Machine Learning Systems",
+      "Custom Fine-Tuned Model Pipelines",
+      "Operational Cost Reduction Solutions",
     ],
   },
   {
     id: "digital-marketing",
-    icon: IconChartBar,
+    num: "07",
     title: "Digital Marketing",
-    tag: "Performance Growth",
     description:
       "Data-driven marketing strategies that grow your brand. From SEO to paid advertising, we help you reach the right audience and maximize your ROI. Google Ads, Meta Ads, TikTok Ads.",
     features: [
       "Google Ads & Performance Max Campaigns",
-      "Meta Ads & TikTok Creative Strategy",
-      "Full-Funnel Conversion Rate Optimization",
-      "GA4 & Advanced Attribution Tracking",
+      "Meta & TikTok Paid Social Strategy",
+      "Comprehensive Technical & Content SEO",
+      "Conversion Rate Optimization (CRO)",
     ],
   },
   {
     id: "data-analytics",
-    icon: IconDatabase,
+    num: "08",
     title: "Data Analytics",
-    tag: "Actionable Insights",
     description:
       "Turn business data into insights with dashboards, reporting, and AI-powered analytics.",
     features: [
-      "Custom Looker & Power BI Dashboards",
-      "Automated Multi-Channel ETL Pipelines",
-      "Revenue & Cohort Retention Analytics",
-      "Predictive Customer Lifetime Modeling",
+      "Executive Looker Studio & Power BI Dashboards",
+      "Multi-Source Attribution & GA4 Audits",
+      "Cohort Retention & Lifetime Value Analysis",
+      "Automated Daily & Weekly Business Reports",
     ],
   },
   {
     id: "cloud-solutions",
-    icon: IconCloudComputing,
+    num: "09",
     title: "Cloud Solutions",
-    tag: "Scalable Infrastructure",
     description:
       "Secure cloud infrastructure, API integrations, deployment, and scalable backend systems.",
     features: [
-      "AWS & GCP Serverless Architecture",
-      "High-Availability Container Deployment",
-      "Enterprise Microservices & REST/GraphQL",
-      "Security Audits & 99.99% SLA Uptime",
+      "AWS, Google Cloud & Vercel Infrastructure",
+      "Scalable Microservices & REST/GraphQL APIs",
+      "High-Availability Container Deployments",
+      "Cloud Security Audits & SLA Monitoring",
     ],
   },
 ];
 
 export function ServicesSection() {
-  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+  const [activeModalService, setActiveModalService] = useState<ServiceItem | null>(null);
 
   return (
-    <section id="services" className="relative w-full bg-[#050914] py-20 sm:py-28 text-white">
-      {/* Background Ambient Glow */}
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(37,99,235,0.15),transparent)]"
-        aria-hidden="true"
-      />
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="services" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111]">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
         {/* Section Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-            Our Expertise
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Intelligent Services Built for Scale
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            We deliver end-to-end technology and growth solutions designed to accelerate revenue, streamline operations, and elevate customer experience.
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-[#E5E0D8] gap-6">
+          <div>
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+              01 — OUR SERVICES
+            </span>
+            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111111]">
+              Capabilities &amp; <span className="italic font-normal">Expertise</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+            From bespoke AI systems to high-performing digital marketing campaigns, we engineer scalable digital growth for modern businesses.
           </p>
         </div>
 
-        {/* 9 Services Grid (3x3 on desktop) */}
-        <div className="mt-14 sm:mt-18 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {SERVICES.map((service) => {
-            const Icon = service.icon;
-            return (
-              <div
-                key={service.id}
-                className="group relative flex flex-col justify-between rounded-2xl border border-white/10 bg-[#071233]/40 p-6 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-[#071233]/70 hover:shadow-[0_12px_36px_rgba(37,99,235,0.2)]"
-              >
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex size-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600/30 to-cyan-500/20 text-cyan-400 border border-cyan-500/30 shadow-inner group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="size-6" stroke={1.8} />
-                    </div>
-                    <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                      {service.tag}
-                    </span>
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-                    {service.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                    {service.description}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-5 border-t border-white/10">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedService(service)}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-colors hover:text-cyan-200"
-                  >
-                    <span>Learn More</span>
-                    <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-                </div>
+        {/* 9 Services as Numbered Editorial List Rows */}
+        <div className="divide-y divide-[#E5E0D8]">
+          {SERVICES.map((service) => (
+            <button
+              key={service.id}
+              type="button"
+              onClick={() => setActiveModalService(service)}
+              className="group flex w-full flex-col md:flex-row md:items-center justify-between py-8 md:py-10 text-left transition-colors hover:bg-[#F0EEE9] px-4 md:px-6 rounded-[2px]"
+            >
+              {/* Left: Number + Title */}
+              <div className="flex items-baseline gap-6 md:gap-10 md:w-1/2">
+                <span className="font-serif text-lg md:text-xl text-[#6B6B6B]">
+                  {service.num}
+                </span>
+                <h3 className="font-serif text-2xl md:text-[26px] font-normal tracking-tight text-[#111111] group-hover:text-[#1D4ED8] transition-colors">
+                  {service.title}
+                </h3>
               </div>
-            );
-          })}
+
+              {/* Middle: Description */}
+              <div className="mt-3 md:mt-0 md:w-5/12 pr-4">
+                <p className="text-sm md:text-[15px] leading-[1.7] text-[#6B6B6B]">
+                  {service.description}
+                </p>
+              </div>
+
+              {/* Right: Subtle Arrow */}
+              <div className="mt-4 md:mt-0 flex items-center justify-end md:w-1/12">
+                <span className="text-lg text-[#111111] transition-transform duration-200 group-hover:translate-x-1.5">
+                  →
+                </span>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Service Detail Modal */}
-      {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md">
-          <div className="relative w-full max-w-lg rounded-2xl border border-white/15 bg-[#071233] p-6 sm:p-8 shadow-2xl">
+      {/* Detail Modal */}
+      {activeModalService && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="relative w-full max-w-lg rounded-[2px] border border-[#E5E0D8] bg-[#FAF8F4] p-8 shadow-2xl">
             <button
               type="button"
-              onClick={() => setSelectedService(null)}
-              className="absolute right-4 top-4 rounded-full p-1.5 text-slate-400 hover:bg-white/10 hover:text-white"
+              onClick={() => setActiveModalService(null)}
+              className="absolute right-5 top-5 p-1 text-[#6B6B6B] hover:text-[#111111]"
               aria-label="Close modal"
             >
               <IconX className="size-5" />
             </button>
 
-            <div className="flex items-center gap-3">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-blue-600/20 text-cyan-400 border border-cyan-500/30">
-                <selectedService.icon className="size-6" />
-              </div>
-              <div>
-                <span className="text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-                  {selectedService.tag}
-                </span>
-                <h3 className="text-xl font-bold text-white">
-                  {selectedService.title}
-                </h3>
-              </div>
-            </div>
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#1D4ED8]">
+              SERVICE {activeModalService.num}
+            </span>
 
-            <p className="mt-4 text-sm leading-relaxed text-slate-300">
-              {selectedService.description}
+            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#111111]">
+              {activeModalService.title}
+            </h3>
+
+            <p className="mt-4 text-sm leading-[1.7] text-[#6B6B6B]">
+              {activeModalService.description}
             </p>
 
-            <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Key Deliverables &amp; Capabilities
+            <div className="mt-6 border-t border-[#E5E0D8] pt-5">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B] mb-3">
+                Key Deliverables
               </h4>
-              <ul className="mt-3 space-y-2.5">
-                {selectedService.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-slate-200">
-                    <IconCheck className="size-4 mt-0.5 text-cyan-400 flex-shrink-0" />
-                    <span>{feature}</span>
+              <ul className="space-y-2.5">
+                {activeModalService.features.map((feat, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#111111]">
+                    <IconCheck className="size-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" stroke={2} />
+                    <span>{feat}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-8 flex items-center justify-end gap-3">
+            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#E5E0D8] pt-5">
               <button
                 type="button"
-                onClick={() => setSelectedService(null)}
-                className="rounded-lg px-4 py-2 text-sm font-medium text-slate-400 hover:text-white"
+                onClick={() => setActiveModalService(null)}
+                className="text-xs font-medium text-[#6B6B6B] hover:text-[#111111]"
               >
                 Close
               </button>
               <a
                 href="#contact"
-                onClick={() => setSelectedService(null)}
-                className="rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-2 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
+                onClick={() => setActiveModalService(null)}
+                className="rounded-[2px] bg-[#111111] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-colors"
               >
-                Inquire About This Service
+                Inquire About Service
               </a>
             </div>
           </div>

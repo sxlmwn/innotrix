@@ -1,6 +1,5 @@
 import HeroSection from "@/components/hero-section";
 import Skiper30 from "@/components/parallax-gallery";
-import LogoMarquee from "@/components/logo-marquee";
 import ServicesSection from "@/components/services-section";
 import AboutSection from "@/components/about-section";
 import PortfolioSection from "@/components/portfolio-section";
@@ -15,47 +14,44 @@ import FloatingWhatsApp from "@/components/floating-whatsapp";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full bg-[#050914] text-white">
-      {/* 1 & 2: Header / Nav & Hero */}
+    <main className="relative min-h-screen w-full bg-[#FAF8F4] text-[#111111]">
+      {/* 1 & 2: Clean Editorial Nav & Left-Aligned Hero */}
       <HeroSection />
 
-      {/* 3: Parallax Image Gallery (Skiper 30) */}
+      {/* 3: Parallax Image Gallery (Skiper 30, restyled for warm ivory theme) */}
       <Skiper30 />
 
-      {/* Logo Strip (Placed after Parallax gallery as specified in Section 6) */}
-      <LogoMarquee />
-
-      {/* 4: Services (9 Separate Services) */}
+      {/* 4: Services (9 Separate Numbered Editorial Rows) */}
       <ServicesSection />
 
-      {/* 5: About Us */}
+      {/* 5: About Us (Two-Column Editorial) */}
       <AboutSection />
 
-      {/* 6: Portfolio / Case Studies (4 Projects with Working Modals) */}
+      {/* 6: Selected Case Studies (Large Editorial, Alternating Image Left/Right with Working Modals) */}
       <PortfolioSection />
 
-      {/* 7: Process (Discover -> Design -> Develop -> Deliver) */}
+      {/* 7: Methodology (01 Discover -> 02 Design -> 03 Develop -> 04 Deliver) */}
       <ProcessSection />
 
-      {/* 8: Why Us (6 Points) */}
+      {/* 8: The Innotrix Standard (6 Points, 2-Column Editorial List) */}
       <WhyUsSection />
 
-      {/* 9: Technologies */}
+      {/* 9: Infrastructure & Technologies (Grouped Plain Text) */}
       <TechnologiesSection />
 
-      {/* 10: Testimonials (3 Reviews) */}
+      {/* 10: Testimonials (The Only Dark Ink Section) */}
       <TestimonialsSection />
 
-      {/* 11: FAQ (Accordion, Only One Open at a Time) */}
+      {/* 11: FAQ (Accordion with Hairline Rows) */}
       <FAQSection />
 
-      {/* 12: Contact / CTA + Working Form */}
+      {/* 12: Initiate Project (Two-Column Editorial Contact + White Box Form) */}
       <ContactSection />
 
-      {/* 13: Footer */}
+      {/* 13: Footer (Ink Black) */}
       <Footer />
 
-      {/* Floating WhatsApp CTA */}
+      {/* Quick WhatsApp Contact CTA */}
       <FloatingWhatsApp />
     </main>
   );

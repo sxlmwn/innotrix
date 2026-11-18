@@ -9,100 +9,95 @@ const images = [
   {
     src: "/images/gallery/web-development.jpg",
     alt: "Modern high-performance web development",
-    tag: "Web Development",
+    caption: "Web Development",
   },
   {
     src: "/images/gallery/mobile-app.jpg",
     alt: "Intuitive iOS and Android mobile app interface",
-    tag: "Mobile App",
+    caption: "Mobile App",
   },
   {
     src: "/images/gallery/ai-chatbot.jpg",
     alt: "24/7 intelligent AI customer support chatbot",
-    tag: "AI Chatbots",
+    caption: "AI Chatbots",
   },
   {
     src: "/images/gallery/ai-voice-agent.jpg",
     alt: "AI voice calling agent and conversational intelligence",
-    tag: "Voice Agents",
+    caption: "Voice Agents",
   },
   {
     src: "/images/gallery/automation.jpg",
     alt: "Enterprise business process automation and workflows",
-    tag: "Automation",
+    caption: "Workflow Automation",
   },
   {
     src: "/images/gallery/digital-marketing.jpg",
     alt: "High-ROI digital marketing and Performance Max campaigns",
-    tag: "Digital Marketing",
+    caption: "Digital Marketing",
   },
   {
     src: "/images/gallery/data-analytics.jpg",
     alt: "Real-time executive data analytics and reporting dashboard",
-    tag: "Data Analytics",
+    caption: "Data Analytics",
   },
   {
     src: "/images/gallery/cloud.jpg",
     alt: "Scalable cloud infrastructure and API integrations",
-    tag: "Cloud Solutions",
+    caption: "Cloud Solutions",
   },
   {
     src: "/images/gallery/ui-ux-design.jpg",
     alt: "Bespoke UI/UX design and interaction prototyping",
-    tag: "UI/UX Design",
+    caption: "UI/UX Design",
   },
   {
     src: "/images/gallery/ecommerce.jpg",
     alt: "High-converting ecommerce storefront and checkout",
-    tag: "E-Commerce",
+    caption: "E-Commerce",
   },
   {
     src: "/images/gallery/team-working.jpg",
     alt: "Innotrix engineers and creatives collaborating",
-    tag: "Expert Team",
+    caption: "Engineering Team",
   },
   {
     src: "/images/gallery/dashboard.jpg",
     alt: "Intelligent analytics dashboard and enterprise metrics",
-    tag: "AI Software",
+    caption: "AI SaaS Software",
   },
   {
     src: "/images/gallery/fashion-ecommerce.jpg",
     alt: "Performance fashion brand ecommerce campaign",
-    tag: "Growth Campaigns",
+    caption: "Growth Strategy",
   },
 ];
 
 interface ColumnProps {
   images: typeof images;
   y: MotionValue<number>;
-  className?: string;
 }
 
-const Column = ({ images, y, className }: ColumnProps) => {
+const Column = ({ images, y }: ColumnProps) => {
   return (
     <motion.div
-      className={`column relative flex h-full w-1/4 min-w-0 flex-1 flex-col gap-3 sm:gap-4 md:gap-[2vw] ${className ?? ""}`}
+      className="column relative flex h-full w-1/4 min-w-0 flex-1 flex-col gap-6 md:gap-8"
       style={{ y }}
     >
       {images.map((img, i) => (
-        <div
-          key={i}
-          className="group relative h-48 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-xl md:rounded-2xl border border-white/10 bg-[#0a1a3d]/60 shadow-[0_8px_30px_rgb(0,0,0,0.35)] transition-transform duration-300 hover:scale-[1.02] hover:border-cyan-400/40"
-        >
-          <Image
-            src={img.src}
-            alt={img.alt}
-            fill
-            sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 25vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050914]/80 via-transparent to-transparent opacity-80" />
-          <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3">
-            <span className="inline-block rounded-full bg-[#050914]/75 px-2 py-0.5 text-[10px] md:text-xs font-medium text-cyan-300 backdrop-blur-md border border-cyan-500/20">
-              {img.tag}
-            </span>
+        <div key={i} className="flex flex-col">
+          <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#EAE6DF]">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 25vw"
+              className="object-cover"
+            />
           </div>
+          <span className="mt-2 text-[12px] font-medium text-[#6B6B6B]">
+            {img.caption}
+          </span>
         </div>
       ))}
     </motion.div>
@@ -157,24 +152,21 @@ export function Skiper30() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#050914] text-white">
+    <section className="relative w-full bg-[#FAF8F4] text-[#111111]">
       {/* Top spacer screen */}
-      <div className="flex h-[24vh] md:h-[35vh] flex-col items-center justify-center px-4 text-center">
-        <span className="mb-2 text-xs font-semibold tracking-widest uppercase text-cyan-400">
-          Our Craft in Motion
+      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center">
+        <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+          Selected Portfolio Work
         </span>
-        <p className="text-sm md:text-base font-medium text-slate-300">
+        <p className="mt-2 text-xs md:text-sm text-[#6B6B6B]">
           scroll down to see
         </p>
-        <div className="mt-3 flex items-center justify-center">
-          <span className="inline-block h-6 w-px animate-pulse bg-gradient-to-b from-cyan-400 to-transparent" />
-        </div>
       </div>
 
       {/* Parallax 4-column gallery container */}
       <div
         ref={galleryRef}
-        className="gallery relative flex h-[175vh] w-full gap-2 sm:gap-3 md:gap-[2vw] overflow-hidden bg-[#071233] p-2 sm:p-3 md:p-[2vw]"
+        className="gallery relative flex h-[175vh] w-full gap-4 md:gap-6 overflow-hidden bg-[#FAF8F4] px-4 md:px-10"
       >
         <Column images={[images[0], images[1], images[2], images[12]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
@@ -183,15 +175,12 @@ export function Skiper30() {
       </div>
 
       {/* Bottom spacer screen */}
-      <div className="flex h-[24vh] md:h-[35vh] flex-col items-center justify-center px-4 text-center">
-        <div className="mb-3 flex items-center justify-center">
-          <span className="inline-block h-6 w-px animate-pulse bg-gradient-to-t from-cyan-400 to-transparent" />
-        </div>
-        <p className="text-sm md:text-base font-medium text-slate-300">
+      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center border-b border-[#E5E0D8]">
+        <p className="text-xs md:text-sm text-[#6B6B6B]">
           scroll Up to see
         </p>
-        <span className="mt-2 text-xs font-semibold tracking-widest uppercase text-cyan-400">
-          Tailored Digital Execution
+        <span className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+          Digital Craft &amp; Engineering
         </span>
       </div>
     </section>

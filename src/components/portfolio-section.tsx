@@ -2,15 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import {
-  IconArrowUpRight,
-  IconX,
-  IconCheck,
-  IconSparkles,
-} from "@tabler/icons-react";
+import { IconX } from "@tabler/icons-react";
 
 export interface ProjectItem {
   id: string;
+  num: string;
   title: string;
   category: string;
   image: string;
@@ -23,13 +19,14 @@ export interface ProjectItem {
 export const PROJECTS: ProjectItem[] = [
   {
     id: "fashion-campaign",
+    num: "01",
     title: "Fashion Brand Performance Campaign",
     category: "Digital Marketing",
     image: "/images/portfolio/portfolio-fashion.jpg",
     description:
       "Scaled a fashion ecommerce brand using Google Performance Max campaigns, advanced audience targeting, and conversion optimization.",
     fullOverview:
-      "Our performance marketing division overhauled the multi-channel acquisition strategy for a rapidly expanding fashion brand. By restructuring Google Performance Max assets, deploying first-party data audiences in GA4, and configuring real-time Looker Studio reporting, we drastically unlocked scalable profitability across global markets.",
+      "Our performance marketing division overhauled the acquisition strategy for an international fashion brand. By engineering structured Performance Max campaigns, deploying granular customer segments in GA4, and configuring real-time Looker Studio reporting, we achieved record ROAS and sustainable scale.",
     tags: ["Google Ads", "Performance Max", "GA4", "Looker Studio"],
     metrics: [
       { label: "Campaign Revenue", value: "$45M+" },
@@ -39,50 +36,53 @@ export const PROJECTS: ProjectItem[] = [
   },
   {
     id: "ai-support",
+    num: "02",
     title: "AI Customer Support Platform",
     category: "AI Solutions",
     image: "/images/portfolio/portfolio-ai-support.jpg",
     description:
       "Built an intelligent AI assistant capable of handling customer support, lead qualification, and appointment booking 24/7.",
     fullOverview:
-      "Engineered an enterprise generative AI customer copilot using OpenAI GPT models, Python microservices, and LangChain orchestration. The platform automatically answers multi-lingual inquiries, books calendar meetings, extracts intent, and smoothly escalates VIP inquiries to human agents with full conversation context.",
+      "Engineered an enterprise generative AI customer support platform powered by OpenAI LLMs, Python backend services, and LangChain orchestration. The platform automates first-line tier-1 inquiries, qualifies inbound leads, and schedules meetings with zero latency.",
     tags: ["OpenAI", "Python", "LangChain", "Automation"],
     metrics: [
-      { label: "Operational Uptime", value: "24/7 Automation" },
+      { label: "Availability", value: "24/7 Automation" },
       { label: "Response Velocity", value: "80% Faster Replies" },
       { label: "Support Overhead", value: "60% Cost Reduction" },
     ],
   },
   {
     id: "corporate-website",
+    num: "03",
     title: "Corporate Business Website",
     category: "Web Development",
     image: "/images/portfolio/portfolio-corporate.jpg",
     description:
       "Designed and developed a high-performance corporate website with modern UI, SEO optimization, and lightning-fast loading speed.",
     fullOverview:
-      "Architected and deployed a cutting-edge web flagship built on Next.js, React, and Tailwind CSS. The solution achieved perfect Lighthouse speed scores, integrated interactive 3D elements without performance degradation, and generated an immediate surge in organic inbound inquiries.",
+      "Delivered a modern corporate web presence built with Next.js, React, and Tailwind CSS. We emphasized clean typography, sub-second load times, and structured technical SEO, driving a substantial boost in high-value inbound consultation requests.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     metrics: [
       { label: "Inbound Pipeline", value: "3x More Leads" },
-      { label: "Lighthouse Performance", value: "98 Page Speed" },
-      { label: "Visitor Retention", value: "40% Lower Bounce" },
+      { label: "Performance Score", value: "98 Page Speed" },
+      { label: "Bounce Reduction", value: "40% Lower Bounce" },
     ],
   },
   {
     id: "mobile-banking",
+    num: "04",
     title: "Mobile Banking Application",
     category: "Mobile App",
     image: "/images/portfolio/portfolio-fintech.jpg",
     description:
       "Designed a secure fintech mobile application featuring digital payments, analytics dashboard, and biometric authentication.",
     fullOverview:
-      "Delivered a native-grade iOS and Android fintech banking app built with Flutter and Firebase cloud infrastructure. Features include biometric login, instant peer-to-peer money transfers, expense categorization charts, and strict financial-grade data encryption.",
+      "Created a robust cross-platform fintech banking application utilizing Flutter and Firebase. Features include biometric face/fingerprint authentication, instant peer-to-peer digital transfers, spending analytics, and bank-grade data security.",
     tags: ["Flutter", "Firebase", "Figma"],
     metrics: [
-      { label: "Verified Active Users", value: "50K+ Downloads" },
-      { label: "App Store Reviews", value: "4.9★ Rating" },
-      { label: "Service Reliability", value: "99.9% Uptime" },
+      { label: "User Adoption", value: "50K+ Downloads" },
+      { label: "App Store Score", value: "4.9★ Rating" },
+      { label: "Platform Stability", value: "99.9% Uptime" },
     ],
   },
 ];
@@ -91,123 +91,122 @@ export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="portfolio" className="relative w-full bg-[#050914] py-20 sm:py-28 text-white border-t border-white/5">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-            CASE STUDIES
-          </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Proven Results in Action
-          </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            Explore how we build future-ready solutions that drive record growth, operational efficiency, and tangible digital impact.
+    <section id="portfolio" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111] border-t border-[#E5E0D8]">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-14 border-b border-[#E5E0D8] gap-6">
+          <div>
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+              03 — SELECTED CASE STUDIES
+            </span>
+            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111111]">
+              Featured <span className="italic font-normal">Work</span>
+            </h2>
+          </div>
+          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+            A curation of recent software, AI implementations, and growth initiatives delivered for our partners worldwide.
           </p>
         </div>
 
-        {/* 4 Projects Grid */}
-        <div className="mt-14 sm:mt-18 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {PROJECTS.map((project) => (
-            <div
-              key={project.id}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#071233]/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-[0_16px_40px_rgba(37,99,235,0.25)]"
-            >
-              {/* Project Image */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-900">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071233] via-[#071233]/30 to-transparent" />
-                <div className="absolute top-4 left-4">
-                  <span className="inline-block rounded-full bg-[#050914]/80 px-3 py-1 text-xs font-semibold text-cyan-400 backdrop-blur-md border border-cyan-500/30">
-                    {project.category}
-                  </span>
+        {/* 4 Large Editorial Case Studies: Alternating Image Left / Right */}
+        <div className="divide-y divide-[#E5E0D8]">
+          {PROJECTS.map((project, idx) => {
+            const isImageRight = idx % 2 === 1;
+            return (
+              <div
+                key={project.id}
+                className="py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+              >
+                {/* Image */}
+                <div
+                  className={`lg:col-span-7 ${
+                    isImageRight ? "lg:order-2" : "lg:order-1"
+                  }`}
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#E5E0D8] bg-[#FAF8F4]">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 55vw"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              {/* Content Body */}
-              <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                {/* Content */}
+                <div
+                  className={`lg:col-span-5 flex flex-col items-start ${
+                    isImageRight ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
+                  <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+                    {project.num} / {project.category}
+                  </span>
+
+                  <h3 className="font-serif mt-3 text-2xl sm:text-3xl md:text-4xl font-normal leading-[1.15] text-[#111111]">
                     {project.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
                     {project.description}
                   </p>
 
-                  {/* Tags */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-md bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300 border border-white/10"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Tags as plain text separated by dots (not pills) */}
+                  <div className="mt-6 text-xs text-[#6B6B6B]">
+                    {project.tags.join(" · ")}
                   </div>
 
-                  {/* Highlight Metrics */}
-                  <div className="mt-6 grid grid-cols-3 gap-2 border-y border-white/10 py-3.5 text-center">
-                    {project.metrics.map((metric, i) => (
-                      <div key={i} className="flex flex-col">
-                        <span className="text-sm sm:text-base font-bold text-cyan-400">
-                          {metric.value}
-                        </span>
-                        <span className="text-[11px] text-slate-400 mt-0.5">
-                          {metric.label}
-                        </span>
+                  {/* Metrics as small plain row with hairlines */}
+                  <div className="mt-6 w-full border-y border-[#E5E0D8] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+                    {project.metrics.map((m, i) => (
+                      <div key={i}>
+                        <strong className="font-semibold text-[#111111]">{m.value}</strong>{" "}
+                        <span className="text-[#6B6B6B]">{m.label}</span>
                       </div>
                     ))}
                   </div>
-                </div>
 
-                {/* Working Action Button */}
-                <div className="mt-6 pt-2">
-                  <button
-                    type="button"
-                    onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:from-blue-500 hover:to-cyan-500 hover:shadow-cyan-500/25"
-                  >
-                    <span>View Project</span>
-                    <IconArrowUpRight className="size-4" />
-                  </button>
+                  {/* Working View Project Button */}
+                  <div className="mt-8">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedProject(project)}
+                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#111111] hover:underline underline-offset-4"
+                    >
+                      <span>View Project</span>
+                      <span className="transition-transform group-hover:translate-x-1">→</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
-      {/* Case Study Detail Modal */}
+      {/* Case Study Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-md">
-          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-2xl border border-white/20 bg-[#071233] p-6 sm:p-8 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#E5E0D8] bg-[#FAF8F4] p-8 sm:p-10 shadow-2xl">
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="absolute right-4 top-4 rounded-full p-2 text-slate-400 hover:bg-white/10 hover:text-white"
+              className="absolute right-6 top-6 p-1 text-[#6B6B6B] hover:text-[#111111]"
               aria-label="Close modal"
             >
-              <IconX className="size-6" />
+              <IconX className="size-5" />
             </button>
 
-            <span className="inline-block rounded-full bg-cyan-500/20 px-3 py-1 text-xs font-semibold text-cyan-300 border border-cyan-500/30">
-              {selectedProject.category}
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#1D4ED8]">
+              {selectedProject.num} — {selectedProject.category}
             </span>
 
-            <h3 className="mt-3 text-2xl sm:text-3xl font-bold text-white">
+            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#111111]">
               {selectedProject.title}
             </h3>
 
-            {/* Modal Image */}
-            <div className="relative mt-5 h-56 sm:h-64 w-full overflow-hidden rounded-xl border border-white/10">
+            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#E5E0D8]">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -217,64 +216,54 @@ export function PortfolioSection() {
             </div>
 
             <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Project Overview &amp; Implementation
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B] mb-2">
+                Overview &amp; Implementation
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-slate-200">
+              <p className="text-sm leading-[1.7] text-[#6B6B6B]">
                 {selectedProject.fullOverview}
               </p>
             </div>
 
             {/* Metrics */}
-            <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Verified Performance Metrics
+            <div className="mt-6 border-t border-[#E5E0D8] pt-5">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B] mb-3">
+                Key Performance Metrics
               </h4>
-              <div className="mt-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {selectedProject.metrics.map((m, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-xl border border-white/10 bg-[#050914] p-3 text-center"
-                  >
-                    <div className="text-lg font-bold text-cyan-400">{m.value}</div>
-                    <div className="text-xs text-slate-400 mt-1">{m.label}</div>
+                  <div key={idx} className="border border-[#E5E0D8] bg-white p-3 rounded-[2px]">
+                    <div className="text-base font-semibold text-[#111111]">{m.value}</div>
+                    <div className="text-[11px] text-[#6B6B6B] mt-0.5">{m.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Tech Stack Tags */}
-            <div className="mt-6">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Technologies Used
-              </h4>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {selectedProject.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-lg border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-200"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+            {/* Tags */}
+            <div className="mt-6 border-t border-[#E5E0D8] pt-5">
+              <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B]">
+                Core Tech:
+              </span>{" "}
+              <span className="text-xs text-[#111111]">
+                {selectedProject.tags.join(" · ")}
+              </span>
             </div>
 
-            {/* Footer Buttons */}
-            <div className="mt-8 flex items-center justify-end gap-3 border-t border-white/10 pt-4">
+            {/* Modal actions */}
+            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#E5E0D8] pt-5">
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="rounded-lg px-4 py-2 text-sm font-medium text-slate-300 hover:text-white"
+                className="text-xs font-medium text-[#6B6B6B] hover:text-[#111111]"
               >
                 Close
               </button>
               <a
                 href="#contact"
                 onClick={() => setSelectedProject(null)}
-                className="rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
+                className="rounded-[2px] bg-[#111111] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-colors"
               >
-                Start a Similar Project
+                Inquire About Similar Project
               </a>
             </div>
           </div>

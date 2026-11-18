@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { IconChevronDown } from "@tabler/icons-react";
 
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -29,54 +28,47 @@ export function FAQSection() {
     },
   ];
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+  const toggle = (idx: number) => {
+    setOpenIndex(openIndex === idx ? null : idx);
   };
 
   return (
-    <section id="faq" className="relative w-full bg-[#050914] py-20 sm:py-28 text-white border-t border-white/5">
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <span className="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-400">
-            FREQUENTLY ASKED QUESTIONS
+    <section id="faq" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111] border-t border-[#E5E0D8]">
+      <div className="mx-auto max-w-4xl px-6 md:px-10">
+        <div className="text-left mb-14">
+          <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+            08 — QUESTIONS &amp; ANSWERS
           </span>
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
-            Everything You Need to Know
+          <h2 className="font-serif mt-4 text-4xl sm:text-5xl font-normal tracking-tight text-[#111111]">
+            Frequently Asked <span className="italic font-normal">Questions</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            Got questions before getting started? Here are clear answers to the most common inquiries.
+          <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+            Answers to common questions regarding timelines, post-deployment support, and technical scope.
           </p>
         </div>
 
-        {/* Accordion List (Only one open at a time) */}
-        <div className="mt-12 sm:mt-16 space-y-4">
+        {/* Accordion: hairline rows, question in sans semibold, answer in muted sans, plus/minus on the right */}
+        <div className="border-t border-[#E5E0D8] divide-y divide-[#E5E0D8]">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div
-                key={idx}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-[#071233]/40 backdrop-blur-sm transition-colors duration-200"
-              >
+              <div key={idx} className="py-6 sm:py-8">
                 <button
                   type="button"
-                  onClick={() => toggleFAQ(idx)}
-                  className="flex w-full items-center justify-between p-6 text-left transition-colors hover:text-cyan-300"
+                  onClick={() => toggle(idx)}
+                  className="flex w-full items-center justify-between text-left group"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-semibold text-white">
+                  <span className="text-base sm:text-lg font-semibold text-[#111111] group-hover:text-[#1D4ED8] transition-colors pr-6">
                     {faq.question}
                   </span>
-                  <div
-                    className={`flex size-8 flex-shrink-0 items-center justify-center rounded-full bg-white/5 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 bg-cyan-500/20 text-cyan-400" : "text-slate-400"
-                    }`}
-                  >
-                    <IconChevronDown className="size-5" />
-                  </div>
+                  <span className="text-xl font-light text-[#6B6B6B] flex-shrink-0 select-none">
+                    {isOpen ? "−" : "+"}
+                  </span>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base leading-relaxed text-slate-300 border-t border-white/5">
+                  <div className="mt-4 text-sm md:text-[15px] leading-[1.7] text-[#6B6B6B] max-w-3xl pr-6">
                     {faq.answer}
                   </div>
                 )}

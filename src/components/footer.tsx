@@ -1,12 +1,5 @@
 "use client";
 
-import {
-  IconMail,
-  IconPhone,
-  IconMapPin,
-  IconBrandWhatsapp,
-} from "@tabler/icons-react";
-
 export function Footer() {
   const navLinks = [
     { name: "Home", href: "#hero" },
@@ -31,71 +24,68 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative w-full border-t border-white/10 bg-[#040812] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+    <footer className="w-full bg-[#0E0E0E] text-white pt-20 pb-14 border-t border-white/10">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-14">
           {/* Brand Col */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <a
                 href="#hero"
-                className="inline-flex items-center gap-1 text-2xl font-bold tracking-tight text-white"
+                className="font-serif text-3xl font-normal tracking-tight text-white"
               >
-                <span>Inno</span>
-                <span className="text-[#22d3ee]">trix</span>
+                Inno<span className="text-[#1D4ED8]">trix</span>
               </a>
 
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
-                Innotrix is an AI, software development, and digital marketing agency for startups, enterprises, and global brands. We turn ambitious digital concepts into scalable, revenue-generating reality.
+              <p className="mt-4 max-w-sm text-sm leading-[1.7] text-[#888888]">
+                Innotrix is an AI, software development, and digital marketing agency for startups, enterprises, and global brands.
               </p>
             </div>
 
-            <div className="mt-8 flex flex-col gap-2.5 text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <IconMail className="size-4 text-cyan-400" />
+            <div className="mt-8 space-y-1.5 text-xs text-[#888888]">
+              <div>
                 <a
                   href="mailto:innotrixai@gmail.com"
-                  className="hover:text-cyan-300 transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   innotrixai@gmail.com
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <IconPhone className="size-4 text-cyan-400" />
+              <div>
                 <a
                   href="https://wa.me/971502891421"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-cyan-300 transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   +971 50 289 1421
                 </a>
               </div>
-              <div className="flex items-center gap-2">
-                <IconMapPin className="size-4 text-cyan-400" />
+              <div>
                 <a
                   href="https://maps.google.com/?q=Dubai,+United+Arab+Emirates"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-cyan-300 transition-colors"
+                  className="hover:text-white transition-colors"
                 >
                   Dubai, UAE
                 </a>
               </div>
+              <div>Mon–Sat, 9:00 AM – 8:00 PM</div>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-4">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
-              Quick Links
+          <div className="md:col-span-4">
+            <h4 className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B] mb-4">
+              Navigation
             </h4>
-            <div className="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-300">
+            <div className="grid grid-cols-2 gap-2 text-xs text-[#888888]">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="transition-colors hover:text-cyan-300"
+                  className="hover:text-white transition-colors py-0.5"
                 >
                   {link.name}
                 </a>
@@ -103,19 +93,19 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
-          <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
-              Key Capabilities
+          {/* Core Services */}
+          <div className="md:col-span-3">
+            <h4 className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B] mb-4">
+              Services
             </h4>
-            <div className="mt-4 flex flex-col gap-2 text-sm text-slate-300">
-              {serviceLinks.map((service) => (
+            <div className="flex flex-col gap-2 text-xs text-[#888888]">
+              {serviceLinks.map((s) => (
                 <a
-                  key={service.name}
-                  href={service.href}
-                  className="transition-colors hover:text-cyan-300"
+                  key={s.name}
+                  href={s.href}
+                  className="hover:text-white transition-colors py-0.5"
                 >
-                  {service.name}
+                  {s.name}
                 </a>
               ))}
             </div>
@@ -123,13 +113,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="mt-20 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#888888]">
           <p>© 2026 Innotrix. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            <span>Crafted with</span>
-            <span className="text-rose-500">❤</span>
-            <span>by Innotrix</span>
-          </p>
+          <p>Dubai, United Arab Emirates</p>
         </div>
       </div>
     </footer>

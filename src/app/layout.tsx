@@ -1,15 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  axes: ["opsz", "SOFT"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -44,9 +48,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${fraunces.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-[#050914] text-[#eaf2ff] selection:bg-cyan-500/30 selection:text-cyan-200 antialiased overflow-x-hidden">
+      <body className="min-h-screen flex flex-col bg-[#FAF8F4] text-[#111111] font-sans antialiased selection:bg-[#111111] selection:text-white">
         {children}
       </body>
     </html>
