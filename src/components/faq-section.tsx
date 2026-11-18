@@ -33,22 +33,22 @@ export function FAQSection() {
   };
 
   return (
-    <section id="faq" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111] border-t border-[#E5E0D8]">
+    <section id="faq" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#0B1E3A] border-t border-[#DBEAFE]">
       <div className="mx-auto max-w-4xl px-6 md:px-10">
         <div className="text-left mb-14">
-          <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+          <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
             08 — QUESTIONS &amp; ANSWERS
           </span>
-          <h2 className="font-serif mt-4 text-4xl sm:text-5xl font-normal tracking-tight text-[#111111]">
+          <h2 className="font-serif mt-4 text-4xl sm:text-5xl font-normal tracking-tight text-[#0B1E3A]">
             Frequently Asked <span className="italic font-normal">Questions</span>
           </h2>
-          <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+          <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#334155]">
             Answers to common questions regarding timelines, post-deployment support, and technical scope.
           </p>
         </div>
 
-        {/* Accordion: hairline rows, question in sans semibold, answer in muted sans, plus/minus on the right */}
-        <div className="border-t border-[#E5E0D8] divide-y divide-[#E5E0D8]">
+        {/* Accordion: hairline rows, question in sans semibold, answer in muted slate, plus/minus on the right */}
+        <div className="border-t border-[#DBEAFE] divide-y divide-[#DBEAFE]">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -59,16 +59,16 @@ export function FAQSection() {
                   className="flex w-full items-center justify-between text-left group"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-semibold text-[#111111] group-hover:text-[#1D4ED8] transition-colors pr-6">
+                  <span className="text-base sm:text-lg font-semibold text-[#0B1E3A] group-hover:text-[#1D4ED8] transition-colors pr-6">
                     {faq.question}
                   </span>
-                  <span className="text-xl font-light text-[#6B6B6B] flex-shrink-0 select-none">
+                  <span className="text-xl font-light text-[#64748B] flex-shrink-0 select-none">
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div className="mt-4 text-sm md:text-[15px] leading-[1.7] text-[#6B6B6B] max-w-3xl pr-6">
+                  <div className="mt-4 text-sm md:text-[15px] leading-[1.7] text-[#334155] max-w-3xl pr-6">
                     {faq.answer}
                   </div>
                 )}

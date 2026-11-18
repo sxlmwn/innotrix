@@ -86,7 +86,7 @@ const Column = ({ images, y }: ColumnProps) => {
     >
       {images.map((img, i) => (
         <div key={i} className="flex flex-col">
-          <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#EAE6DF]">
+          <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#DBEAFE]/40 border border-[#DBEAFE]">
             <Image
               src={img.src}
               alt={img.alt}
@@ -95,7 +95,7 @@ const Column = ({ images, y }: ColumnProps) => {
               className="object-cover"
             />
           </div>
-          <span className="mt-2 text-[12px] font-medium text-[#6B6B6B]">
+          <span className="mt-2 text-[12px] font-medium text-[#64748B]">
             {img.caption}
           </span>
         </div>
@@ -152,13 +152,13 @@ export function Skiper30() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#FAF8F4] text-[#111111]">
+    <section className="relative w-full bg-[#EFF6FF] text-[#0B1E3A]">
       {/* Top spacer screen */}
       <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center">
-        <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+        <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
           Selected Portfolio Work
         </span>
-        <p className="mt-2 text-xs md:text-sm text-[#6B6B6B]">
+        <p className="mt-2 text-xs md:text-sm text-[#64748B]">
           scroll down to see
         </p>
       </div>
@@ -166,7 +166,7 @@ export function Skiper30() {
       {/* Parallax 4-column gallery container */}
       <div
         ref={galleryRef}
-        className="gallery relative flex h-[175vh] w-full gap-4 md:gap-6 overflow-hidden bg-[#FAF8F4] px-4 md:px-10"
+        className="gallery relative flex h-[175vh] w-full gap-4 md:gap-6 overflow-hidden bg-[#EFF6FF] px-4 md:px-10"
       >
         <Column images={[images[0], images[1], images[2], images[12]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
@@ -175,11 +175,11 @@ export function Skiper30() {
       </div>
 
       {/* Bottom spacer screen */}
-      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center border-b border-[#E5E0D8]">
-        <p className="text-xs md:text-sm text-[#6B6B6B]">
+      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center border-b border-[#DBEAFE]">
+        <p className="text-xs md:text-sm text-[#64748B]">
           scroll Up to see
         </p>
-        <span className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+        <span className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
           Digital Craft &amp; Engineering
         </span>
       </div>

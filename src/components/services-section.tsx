@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { IconArrowRight, IconX, IconCheck } from "@tabler/icons-react";
+import { IconX, IconCheck } from "@tabler/icons-react";
 
 export interface ServiceItem {
   id: string;
@@ -135,52 +135,52 @@ export function ServicesSection() {
   const [activeModalService, setActiveModalService] = useState<ServiceItem | null>(null);
 
   return (
-    <section id="services" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111]">
+    <section id="services" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#0B1E3A]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-[#E5E0D8] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-[#DBEAFE] gap-6">
           <div>
-            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
               01 — OUR SERVICES
             </span>
-            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111111]">
+            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#0B1E3A]">
               Capabilities &amp; <span className="italic font-normal">Expertise</span>
             </h2>
           </div>
-          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#334155]">
             From bespoke AI systems to high-performing digital marketing campaigns, we engineer scalable digital growth for modern businesses.
           </p>
         </div>
 
         {/* 9 Services as Numbered Editorial List Rows */}
-        <div className="divide-y divide-[#E5E0D8]">
+        <div className="divide-y divide-[#DBEAFE]">
           {SERVICES.map((service) => (
             <button
               key={service.id}
               type="button"
               onClick={() => setActiveModalService(service)}
-              className="group flex w-full flex-col md:flex-row md:items-center justify-between py-8 md:py-10 text-left transition-colors hover:bg-[#F0EEE9] px-4 md:px-6 rounded-[2px]"
+              className="group flex w-full flex-col md:flex-row md:items-center justify-between py-8 md:py-10 text-left transition-colors hover:bg-[#F0F7FF] px-4 md:px-6 rounded-[2px]"
             >
               {/* Left: Number + Title */}
               <div className="flex items-baseline gap-6 md:gap-10 md:w-1/2">
-                <span className="font-serif text-lg md:text-xl text-[#6B6B6B]">
+                <span className="font-serif text-lg md:text-xl text-[#64748B]">
                   {service.num}
                 </span>
-                <h3 className="font-serif text-2xl md:text-[26px] font-normal tracking-tight text-[#111111] group-hover:text-[#1D4ED8] transition-colors">
+                <h3 className="font-serif text-2xl md:text-[26px] font-normal tracking-tight text-[#0B1E3A] group-hover:text-[#1D4ED8] transition-colors">
                   {service.title}
                 </h3>
               </div>
 
               {/* Middle: Description */}
               <div className="mt-3 md:mt-0 md:w-5/12 pr-4">
-                <p className="text-sm md:text-[15px] leading-[1.7] text-[#6B6B6B]">
+                <p className="text-sm md:text-[15px] leading-[1.7] text-[#334155]">
                   {service.description}
                 </p>
               </div>
 
               {/* Right: Subtle Arrow */}
               <div className="mt-4 md:mt-0 flex items-center justify-end md:w-1/12">
-                <span className="text-lg text-[#111111] transition-transform duration-200 group-hover:translate-x-1.5">
+                <span className="text-lg text-[#0B1E3A] transition-transform duration-200 group-hover:translate-x-1.5">
                   →
                 </span>
               </div>
@@ -192,11 +192,11 @@ export function ServicesSection() {
       {/* Detail Modal */}
       {activeModalService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="relative w-full max-w-lg rounded-[2px] border border-[#E5E0D8] bg-[#FAF8F4] p-8 shadow-2xl">
+          <div className="relative w-full max-w-lg rounded-[2px] border border-[#DBEAFE] bg-[#EFF6FF] p-8 shadow-2xl">
             <button
               type="button"
               onClick={() => setActiveModalService(null)}
-              className="absolute right-5 top-5 p-1 text-[#6B6B6B] hover:text-[#111111]"
+              className="absolute right-5 top-5 p-1 text-[#64748B] hover:text-[#0B1E3A]"
               aria-label="Close modal"
             >
               <IconX className="size-5" />
@@ -206,21 +206,21 @@ export function ServicesSection() {
               SERVICE {activeModalService.num}
             </span>
 
-            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#111111]">
+            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#0B1E3A]">
               {activeModalService.title}
             </h3>
 
-            <p className="mt-4 text-sm leading-[1.7] text-[#6B6B6B]">
+            <p className="mt-4 text-sm leading-[1.7] text-[#334155]">
               {activeModalService.description}
             </p>
 
-            <div className="mt-6 border-t border-[#E5E0D8] pt-5">
-              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B] mb-3">
+            <div className="mt-6 border-t border-[#DBEAFE] pt-5">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B] mb-3">
                 Key Deliverables
               </h4>
               <ul className="space-y-2.5">
                 {activeModalService.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#111111]">
+                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0B1E3A]">
                     <IconCheck className="size-4 text-[#1D4ED8] flex-shrink-0 mt-0.5" stroke={2} />
                     <span>{feat}</span>
                   </li>
@@ -228,18 +228,18 @@ export function ServicesSection() {
               </ul>
             </div>
 
-            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#E5E0D8] pt-5">
+            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#DBEAFE] pt-5">
               <button
                 type="button"
                 onClick={() => setActiveModalService(null)}
-                className="text-xs font-medium text-[#6B6B6B] hover:text-[#111111]"
+                className="text-xs font-medium text-[#64748B] hover:text-[#0B1E3A]"
               >
                 Close
               </button>
               <a
                 href="#contact"
                 onClick={() => setActiveModalService(null)}
-                className="rounded-[2px] bg-[#111111] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-colors"
+                className="rounded-[2px] bg-[#1D4ED8] px-5 py-2.5 text-xs font-medium text-white hover:bg-blue-700 transition-colors"
               >
                 Inquire About Service
               </a>

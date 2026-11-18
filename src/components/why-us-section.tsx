@@ -29,33 +29,33 @@ export function WhyUsSection() {
   ];
 
   return (
-    <section id="why-us" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111] border-t border-[#E5E0D8]">
+    <section id="why-us" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#0B1E3A] border-t border-[#DBEAFE]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Heading */}
           <div className="lg:col-span-5">
-            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
               05 — THE INNOTRIX STANDARD
             </span>
-            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.1] tracking-tight text-[#111111]">
+            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.1] tracking-tight text-[#0B1E3A]">
               Why Choose <span className="italic font-normal">Innotrix</span>
             </h2>
-            <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+            <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#334155]">
               We merge deep technical mastery with direct commercial focus to deliver solutions that outperform expectations.
             </p>
           </div>
 
-          {/* Right Column: 2-column list, small title (sans, semibold) + one line (No cards, no icons in boxes) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12 border-t lg:border-t-0 border-[#E5E0D8] pt-8 lg:pt-0">
+          {/* Right Column: 2-column list, title + one line each, no cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12 border-t lg:border-t-0 border-[#DBEAFE] pt-8 lg:pt-0">
             {points.map((point, idx) => (
               <div key={idx} className="flex flex-col">
-                <span className="text-[11px] font-medium text-[#6B6B6B] mb-1">
+                <span className="text-[11px] font-medium text-[#64748B] mb-1">
                   0{idx + 1}
                 </span>
-                <h3 className="text-base font-semibold text-[#111111]">
+                <h3 className="text-base font-semibold text-[#0B1E3A]">
                   {point.title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-[13px] leading-[1.7] text-[#6B6B6B]">
+                <p className="mt-2 text-xs sm:text-[13px] leading-[1.7] text-[#334155]">
                   {point.desc}
                 </p>
               </div>

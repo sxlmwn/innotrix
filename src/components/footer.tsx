@@ -24,7 +24,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-[#0E0E0E] text-white pt-20 pb-14 border-t border-white/10">
+    <footer className="w-full bg-[#0B1E3A] text-white pt-20 pb-14 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-14">
           {/* Brand Col */}
@@ -34,15 +34,15 @@ export function Footer() {
                 href="#hero"
                 className="font-serif text-3xl font-normal tracking-tight text-white"
               >
-                Inno<span className="text-[#1D4ED8]">trix</span>
+                Inno<span className="text-[#2563eb]">trix</span>
               </a>
 
-              <p className="mt-4 max-w-sm text-sm leading-[1.7] text-[#888888]">
+              <p className="mt-4 max-w-sm text-sm leading-[1.7] text-[#94A3B8]">
                 Innotrix is an AI, software development, and digital marketing agency for startups, enterprises, and global brands.
               </p>
             </div>
 
-            <div className="mt-8 space-y-1.5 text-xs text-[#888888]">
+            <div className="mt-8 space-y-1.5 text-xs text-[#94A3B8]">
               <div>
                 <a
                   href="mailto:innotrixai@gmail.com"
@@ -77,10 +77,10 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-4">
-            <h4 className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B] mb-4">
+            <h4 className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#94A3B8] mb-4">
               Navigation
             </h4>
-            <div className="grid grid-cols-2 gap-2 text-xs text-[#888888]">
+            <div className="grid grid-cols-2 gap-2 text-xs text-[#94A3B8]">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -95,10 +95,10 @@ export function Footer() {
 
           {/* Core Services */}
           <div className="md:col-span-3">
-            <h4 className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B] mb-4">
+            <h4 className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#94A3B8] mb-4">
               Services
             </h4>
-            <div className="flex flex-col gap-2 text-xs text-[#888888]">
+            <div className="flex flex-col gap-2 text-xs text-[#94A3B8]">
               {serviceLinks.map((s) => (
                 <a
                   key={s.name}
@@ -113,7 +113,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-20 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#888888]">
+        <div className="mt-20 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#94A3B8]">
           <p>© 2026 Innotrix. All rights reserved.</p>
           <p>Dubai, United Arab Emirates</p>
         </div>

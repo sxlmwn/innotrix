@@ -14,11 +14,11 @@ import FloatingWhatsApp from "@/components/floating-whatsapp";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full bg-[#FAF8F4] text-[#111111]">
+    <main className="relative min-h-screen w-full bg-[#EAF3FF] text-[#334155]">
       {/* 1 & 2: Clean Editorial Nav & Left-Aligned Hero */}
       <HeroSection />
 
-      {/* 3: Parallax Image Gallery (Skiper 30, restyled for warm ivory theme) */}
+      {/* 3: Parallax Image Gallery (Skiper 30, light blue theme) */}
       <Skiper30 />
 
       {/* 4: Services (9 Separate Numbered Editorial Rows) */}
@@ -39,7 +39,7 @@ export default function HomePage() {
       {/* 9: Infrastructure & Technologies (Grouped Plain Text) */}
       <TechnologiesSection />
 
-      {/* 10: Testimonials (The Only Dark Ink Section) */}
+      {/* 10: Testimonials (The Single Dark Navy Section) */}
       <TestimonialsSection />
 
       {/* 11: FAQ (Accordion with Hairline Rows) */}
@@ -48,7 +48,7 @@ export default function HomePage() {
       {/* 12: Initiate Project (Two-Column Editorial Contact + White Box Form) */}
       <ContactSection />
 
-      {/* 13: Footer (Ink Black) */}
+      {/* 13: Footer (Deep Navy) */}
       <Footer />
 
       {/* Quick WhatsApp Contact CTA */}

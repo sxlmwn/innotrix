@@ -91,25 +91,25 @@ export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="portfolio" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#111111] border-t border-[#E5E0D8]">
+    <section id="portfolio" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#0B1E3A] border-t border-[#DBEAFE]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-14 border-b border-[#E5E0D8] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-14 border-b border-[#DBEAFE] gap-6">
           <div>
-            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
               03 — SELECTED CASE STUDIES
             </span>
-            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#111111]">
+            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#0B1E3A]">
               Featured <span className="italic font-normal">Work</span>
             </h2>
           </div>
-          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#334155]">
             A curation of recent software, AI implementations, and growth initiatives delivered for our partners worldwide.
           </p>
         </div>
 
         {/* 4 Large Editorial Case Studies: Alternating Image Left / Right */}
-        <div className="divide-y divide-[#E5E0D8]">
+        <div className="divide-y divide-[#DBEAFE]">
           {PROJECTS.map((project, idx) => {
             const isImageRight = idx % 2 === 1;
             return (
@@ -123,7 +123,7 @@ export function PortfolioSection() {
                     isImageRight ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#E5E0D8] bg-[#FAF8F4]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#DBEAFE] bg-[#EFF6FF]">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -140,29 +140,29 @@ export function PortfolioSection() {
                     isImageRight ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#6B6B6B]">
+                  <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
                     {project.num} / {project.category}
                   </span>
 
-                  <h3 className="font-serif mt-3 text-2xl sm:text-3xl md:text-4xl font-normal leading-[1.15] text-[#111111]">
+                  <h3 className="font-serif mt-3 text-2xl sm:text-3xl md:text-4xl font-normal leading-[1.15] text-[#0B1E3A]">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#6B6B6B]">
+                  <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#334155]">
                     {project.description}
                   </p>
 
-                  {/* Tags as plain text separated by dots (not pills) */}
-                  <div className="mt-6 text-xs text-[#6B6B6B]">
+                  {/* Tags as plain text separated by dots */}
+                  <div className="mt-6 text-xs text-[#64748B]">
                     {project.tags.join(" · ")}
                   </div>
 
                   {/* Metrics as small plain row with hairlines */}
-                  <div className="mt-6 w-full border-y border-[#E5E0D8] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div className="mt-6 w-full border-y border-[#DBEAFE] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
                     {project.metrics.map((m, i) => (
                       <div key={i}>
-                        <strong className="font-semibold text-[#111111]">{m.value}</strong>{" "}
-                        <span className="text-[#6B6B6B]">{m.label}</span>
+                        <strong className="font-semibold text-[#0B1E3A]">{m.value}</strong>{" "}
+                        <span className="text-[#64748B]">{m.label}</span>
                       </div>
                     ))}
                   </div>
@@ -172,7 +172,7 @@ export function PortfolioSection() {
                     <button
                       type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#111111] hover:underline underline-offset-4"
+                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#0B1E3A] hover:underline underline-offset-4"
                     >
                       <span>View Project</span>
                       <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -188,11 +188,11 @@ export function PortfolioSection() {
       {/* Case Study Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#E5E0D8] bg-[#FAF8F4] p-8 sm:p-10 shadow-2xl">
+          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#DBEAFE] bg-[#EFF6FF] p-8 sm:p-10 shadow-2xl">
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="absolute right-6 top-6 p-1 text-[#6B6B6B] hover:text-[#111111]"
+              className="absolute right-6 top-6 p-1 text-[#64748B] hover:text-[#0B1E3A]"
               aria-label="Close modal"
             >
               <IconX className="size-5" />
@@ -202,11 +202,11 @@ export function PortfolioSection() {
               {selectedProject.num} — {selectedProject.category}
             </span>
 
-            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#111111]">
+            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#0B1E3A]">
               {selectedProject.title}
             </h3>
 
-            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#E5E0D8]">
+            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#DBEAFE]">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -216,52 +216,52 @@ export function PortfolioSection() {
             </div>
 
             <div className="mt-6">
-              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B] mb-2">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B] mb-2">
                 Overview &amp; Implementation
               </h4>
-              <p className="text-sm leading-[1.7] text-[#6B6B6B]">
+              <p className="text-sm leading-[1.7] text-[#334155]">
                 {selectedProject.fullOverview}
               </p>
             </div>
 
             {/* Metrics */}
-            <div className="mt-6 border-t border-[#E5E0D8] pt-5">
-              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B] mb-3">
+            <div className="mt-6 border-t border-[#DBEAFE] pt-5">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B] mb-3">
                 Key Performance Metrics
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {selectedProject.metrics.map((m, idx) => (
-                  <div key={idx} className="border border-[#E5E0D8] bg-white p-3 rounded-[2px]">
-                    <div className="text-base font-semibold text-[#111111]">{m.value}</div>
-                    <div className="text-[11px] text-[#6B6B6B] mt-0.5">{m.label}</div>
+                  <div key={idx} className="border border-[#DBEAFE] bg-white p-3 rounded-[2px]">
+                    <div className="text-base font-semibold text-[#0B1E3A]">{m.value}</div>
+                    <div className="text-[11px] text-[#64748B] mt-0.5">{m.label}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Tags */}
-            <div className="mt-6 border-t border-[#E5E0D8] pt-5">
-              <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#6B6B6B]">
+            <div className="mt-6 border-t border-[#DBEAFE] pt-5">
+              <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B]">
                 Core Tech:
               </span>{" "}
-              <span className="text-xs text-[#111111]">
+              <span className="text-xs text-[#0B1E3A]">
                 {selectedProject.tags.join(" · ")}
               </span>
             </div>
 
             {/* Modal actions */}
-            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#E5E0D8] pt-5">
+            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#DBEAFE] pt-5">
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="text-xs font-medium text-[#6B6B6B] hover:text-[#111111]"
+                className="text-xs font-medium text-[#64748B] hover:text-[#0B1E3A]"
               >
                 Close
               </button>
               <a
                 href="#contact"
                 onClick={() => setSelectedProject(null)}
-                className="rounded-[2px] bg-[#111111] px-5 py-2.5 text-xs font-medium text-white hover:bg-black transition-colors"
+                className="rounded-[2px] bg-[#1D4ED8] px-5 py-2.5 text-xs font-medium text-white hover:bg-blue-700 transition-colors"
               >
                 Inquire About Similar Project
               </a>
