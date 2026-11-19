@@ -4,96 +4,79 @@ import { IconCheck } from "@tabler/icons-react";
 
 export function AboutSection() {
   const checklist = [
-    {
-      title: "Expert Team",
-      desc: "Experienced developers, designers, and marketers dedicated to your success.",
-    },
-    {
-      title: "Fast Delivery",
-      desc: "Agile sprints ensuring precision execution and on-time launches.",
-    },
-    {
-      title: "24/7 Support",
-      desc: "Round-the-clock technical monitoring and proactive infrastructure support.",
-    },
-    {
-      title: "Results-Driven",
-      desc: "Obsessed with business ROI, speed, conversion rates, and scalable growth.",
-    },
+    { title: "Expert Team" },
+    { title: "Fast Delivery" },
+    { title: "24/7 Support" },
+    { title: "Results-Driven" },
   ];
 
   return (
-    <section id="about" className="w-full bg-[#EFF6FF] py-24 md:py-32 text-[#0B1E3A] border-t border-[#DBEAFE]">
+    <section id="about" className="w-full bg-[#050914] py-24 md:py-32 text-white border-t border-[#1E293B]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Heading & Label */}
           <div className="lg:col-span-5 flex flex-col">
-            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
+            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
               02 — ABOUT US
             </span>
-            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.1] tracking-tight text-[#0B1E3A]">
-              Turning Ideas Into <span className="italic font-normal">Digital Success</span>
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+              Turning Ideas Into Digital Success
             </h2>
           </div>
 
-          {/* Right Column: Editorial Body & Checklist */}
+          {/* Right Column: Text & Checklist */}
           <div className="lg:col-span-7 flex flex-col">
-            <p className="text-base md:text-lg leading-[1.7] text-[#334155]">
-              At Innotrix, we combine technology, design, and marketing to help businesses grow faster. We are a full-service digital agency focused on building intelligent digital solutions that create real business results. Our team of experienced developers, designers, and marketers work closely with every client to deliver products that are fast, reliable, and built to scale. Whether you need a modern website, a custom AI solution, or a complete digital marketing strategy, Innotrix is your trusted partner for digital growth.
+            <p className="text-base md:text-lg leading-relaxed text-[#94A3B8]">
+              At Innotrix, we combine technology, design, and marketing to help businesses grow faster — fast, reliable products, built to scale.
             </p>
 
-            {/* Checklist as Plain List with Small Blue Check Marks (No Boxes) */}
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 border-t border-[#DBEAFE] pt-8">
+            {/* Checklist */}
+            <div className="mt-8 grid grid-cols-2 gap-4 border-t border-[#1E293B] pt-6">
               {checklist.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3">
-                  <IconCheck className="size-4 text-[#1D4ED8] flex-shrink-0 mt-1" stroke={2.5} />
-                  <div>
-                    <h4 className="text-sm font-semibold text-[#0B1E3A]">{item.title}</h4>
-                    <p className="mt-1 text-xs sm:text-[13px] leading-[1.6] text-[#64748B]">
-                      {item.desc}
-                    </p>
-                  </div>
+                <div key={idx} className="flex items-center gap-2.5">
+                  <IconCheck className="size-4 text-[#2563eb] flex-shrink-0" stroke={2.5} />
+                  <span className="text-sm font-semibold text-white">{item.title}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Stats as a Plain Row with Hairlines */}
-        <div className="mt-16 sm:mt-20 border-t border-[#DBEAFE] pt-8">
+        {/* Stats Plain Row */}
+        <div className="mt-16 border-t border-[#1E293B] pt-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
-            <div className="border-l border-[#DBEAFE] pl-5">
-              <span className="font-serif text-3xl sm:text-4xl font-normal text-[#0B1E3A]">
+            <div className="border-l border-[#1E293B] pl-5">
+              <span className="text-3xl sm:text-4xl font-bold text-white">
                 100+
               </span>
-              <p className="mt-1 text-xs tracking-wider uppercase text-[#64748B]">
+              <p className="mt-1 text-xs tracking-wider uppercase text-[#94A3B8]">
                 Projects Completed
               </p>
             </div>
 
-            <div className="border-l border-[#DBEAFE] pl-5">
-              <span className="font-serif text-3xl sm:text-4xl font-normal text-[#0B1E3A]">
+            <div className="border-l border-[#1E293B] pl-5">
+              <span className="text-3xl sm:text-4xl font-bold text-white">
                 50+
               </span>
-              <p className="mt-1 text-xs tracking-wider uppercase text-[#64748B]">
+              <p className="mt-1 text-xs tracking-wider uppercase text-[#94A3B8]">
                 Happy Clients
               </p>
             </div>
 
-            <div className="border-l border-[#DBEAFE] pl-5">
-              <span className="font-serif text-3xl sm:text-4xl font-normal text-[#0B1E3A]">
+            <div className="border-l border-[#1E293B] pl-5">
+              <span className="text-3xl sm:text-4xl font-bold text-white">
                 8+
               </span>
-              <p className="mt-1 text-xs tracking-wider uppercase text-[#64748B]">
+              <p className="mt-1 text-xs tracking-wider uppercase text-[#94A3B8]">
                 Years Experience
               </p>
             </div>
 
-            <div className="border-l border-[#DBEAFE] pl-5">
-              <span className="font-serif text-3xl sm:text-4xl font-normal text-[#0B1E3A]">
+            <div className="border-l border-[#1E293B] pl-5">
+              <span className="text-3xl sm:text-4xl font-bold text-white">
                 99%
               </span>
-              <p className="mt-1 text-xs tracking-wider uppercase text-[#64748B]">
+              <p className="mt-1 text-xs tracking-wider uppercase text-[#94A3B8]">
                 Client Satisfaction
               </p>
             </div>

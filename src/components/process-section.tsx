@@ -5,58 +5,58 @@ export function ProcessSection() {
     {
       step: "01",
       title: "Discover",
-      desc: "We start by understanding your business, goals, and target audience to define a clear project roadmap.",
+      desc: "Understand your business, goals and audience.",
     },
     {
       step: "02",
       title: "Design",
-      desc: "Our designers create stunning, user-friendly interfaces and experiences tailored to your brand.",
+      desc: "Stunning, user-friendly interfaces for your brand.",
     },
     {
       step: "03",
       title: "Develop",
-      desc: "Our developers build your solution using modern technologies, with regular updates and testing.",
+      desc: "Build with modern tech, tested at every step.",
     },
     {
       step: "04",
       title: "Deliver",
-      desc: "We launch your project, provide training, and offer ongoing support to ensure continued success.",
+      desc: "Launch, train, and support after go-live.",
     },
   ];
 
   return (
-    <section id="process" className="w-full bg-[#EFF6FF] py-24 md:py-32 text-[#0B1E3A] border-t border-[#DBEAFE]">
+    <section id="process" className="w-full bg-[#050914] py-24 md:py-32 text-white border-t border-[#1E293B]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="max-w-2xl">
-          <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
+          <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
             04 — METHODOLOGY
           </span>
-          <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.1] tracking-tight text-[#0B1E3A]">
-            How We <span className="italic font-normal">Deliver</span>
+          <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            How We Deliver
           </h2>
-          <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#334155]">
+          <p className="mt-4 text-sm md:text-base leading-relaxed text-[#94A3B8]">
             A transparent four-phase delivery cycle engineered for momentum, continuous feedback, and reliable production results.
           </p>
         </div>
 
-        {/* 4 Steps in a row separated by hairlines */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 border-t border-[#DBEAFE]">
+        {/* 4 Steps separated by hairlines */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 border-t border-[#1E293B]">
           {steps.map((item, idx) => (
             <div
               key={item.step}
               className={`py-8 md:py-10 ${
-                idx !== 0 ? "md:border-l border-[#DBEAFE] md:pl-8" : ""
+                idx !== 0 ? "md:border-l border-[#1E293B] md:pl-8" : ""
               } ${idx !== steps.length - 1 ? "md:pr-8" : ""} ${
-                idx !== 0 ? "border-t md:border-t-0 border-[#DBEAFE]" : ""
+                idx !== 0 ? "border-t md:border-t-0 border-[#1E293B]" : ""
               }`}
             >
-              <span className="font-serif text-3xl md:text-4xl font-normal text-[#64748B]">
+              <span className="font-mono text-3xl md:text-4xl font-bold text-[#94A3B8]">
                 {item.step}
               </span>
-              <h3 className="font-serif mt-4 text-xl sm:text-2xl font-normal text-[#0B1E3A]">
+              <h3 className="mt-4 text-xl font-bold text-white">
                 {item.title}
               </h3>
-              <p className="mt-3 text-xs sm:text-sm leading-[1.7] text-[#334155]">
+              <p className="mt-3 text-xs sm:text-sm leading-relaxed text-[#94A3B8]">
                 {item.desc}
               </p>
             </div>

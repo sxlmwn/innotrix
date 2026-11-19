@@ -23,13 +23,12 @@ export const PROJECTS: ProjectItem[] = [
     title: "Fashion Brand Performance Campaign",
     category: "Digital Marketing",
     image: "/images/portfolio/portfolio-fashion.jpg",
-    description:
-      "Scaled a fashion ecommerce brand using Google Performance Max campaigns, advanced audience targeting, and conversion optimization.",
+    description: "Google Performance Max, scaled a fashion e-commerce brand.",
     fullOverview:
-      "Our performance marketing division overhauled the acquisition strategy for an international fashion brand. By engineering structured Performance Max campaigns, deploying granular customer segments in GA4, and configuring real-time Looker Studio reporting, we achieved record ROAS and sustainable scale.",
+      "Our performance marketing division overhauled acquisition for an international fashion brand. By engineering structured Performance Max campaigns and deploying granular audience segmentation, we scaled revenue sustainably.",
     tags: ["Google Ads", "Performance Max", "GA4", "Looker Studio"],
     metrics: [
-      { label: "Campaign Revenue", value: "$45M+" },
+      { label: "Campaign Revenue", value: "45M+" },
       { label: "Return on Ad Spend", value: "8.5x ROAS" },
       { label: "Engaged Traffic", value: "100K+ Clicks" },
     ],
@@ -40,13 +39,11 @@ export const PROJECTS: ProjectItem[] = [
     title: "AI Customer Support Platform",
     category: "AI Solutions",
     image: "/images/portfolio/portfolio-ai-support.jpg",
-    description:
-      "Built an intelligent AI assistant capable of handling customer support, lead qualification, and appointment booking 24/7.",
+    description: "AI assistant for support, leads and booking, 24/7.",
     fullOverview:
-      "Engineered an enterprise generative AI customer support platform powered by OpenAI LLMs, Python backend services, and LangChain orchestration. The platform automates first-line tier-1 inquiries, qualifies inbound leads, and schedules meetings with zero latency.",
+      "Engineered an enterprise generative AI customer support platform that automates tier-1 customer inquiries, qualifies inbound leads, and schedules bookings around the clock.",
     tags: ["OpenAI", "Python", "LangChain", "Automation"],
     metrics: [
-      { label: "Availability", value: "24/7 Automation" },
       { label: "Response Velocity", value: "80% Faster Replies" },
       { label: "Support Overhead", value: "60% Cost Reduction" },
     ],
@@ -57,10 +54,9 @@ export const PROJECTS: ProjectItem[] = [
     title: "Corporate Business Website",
     category: "Web Development",
     image: "/images/portfolio/portfolio-corporate.jpg",
-    description:
-      "Designed and developed a high-performance corporate website with modern UI, SEO optimization, and lightning-fast loading speed.",
+    description: "High-performance corporate site, SEO + fast loading.",
     fullOverview:
-      "Delivered a modern corporate web presence built with Next.js, React, and Tailwind CSS. We emphasized clean typography, sub-second load times, and structured technical SEO, driving a substantial boost in high-value inbound consultation requests.",
+      "Designed and developed a corporate web presence built with Next.js, React, and modern optimization techniques, maximizing organic lead generation and user engagement.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     metrics: [
       { label: "Inbound Pipeline", value: "3x More Leads" },
@@ -74,11 +70,10 @@ export const PROJECTS: ProjectItem[] = [
     title: "Mobile Banking Application",
     category: "Mobile App",
     image: "/images/portfolio/portfolio-fintech.jpg",
-    description:
-      "Designed a secure fintech mobile application featuring digital payments, analytics dashboard, and biometric authentication.",
+    description: "Secure fintech app, payments + analytics + biometric login.",
     fullOverview:
-      "Created a robust cross-platform fintech banking application utilizing Flutter and Firebase. Features include biometric face/fingerprint authentication, instant peer-to-peer digital transfers, spending analytics, and bank-grade data security.",
-    tags: ["Flutter", "Firebase", "Figma"],
+      "Engineered an iOS and Android fintech application featuring biometric authentication, instant payment rails, and spending analytics backed by high-availability cloud services.",
+    tags: ["Flutter", "Firebase", "Biometrics"],
     metrics: [
       { label: "User Adoption", value: "50K+ Downloads" },
       { label: "App Store Score", value: "4.9★ Rating" },
@@ -91,25 +86,25 @@ export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="portfolio" className="w-full bg-[#FFFFFF] py-24 md:py-32 text-[#0B1E3A] border-t border-[#DBEAFE]">
+    <section id="portfolio" className="w-full bg-[#050914] py-24 md:py-32 text-white border-t border-[#1E293B]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-14 border-b border-[#DBEAFE] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-[#1E293B] gap-6">
           <div>
-            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
+            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
               03 — SELECTED CASE STUDIES
             </span>
-            <h2 className="font-serif mt-4 text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-[#0B1E3A]">
-              Featured <span className="italic font-normal">Work</span>
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+              Featured Work
             </h2>
           </div>
-          <p className="max-w-md text-sm md:text-base leading-[1.7] text-[#334155]">
-            A curation of recent software, AI implementations, and growth initiatives delivered for our partners worldwide.
+          <p className="max-w-md text-sm md:text-base leading-relaxed text-[#94A3B8]">
+            Selected implementations across AI, high-performance software, and growth marketing.
           </p>
         </div>
 
-        {/* 4 Large Editorial Case Studies: Alternating Image Left / Right */}
-        <div className="divide-y divide-[#DBEAFE]">
+        {/* 4 Large Projects: Alternating Image Left / Right */}
+        <div className="divide-y divide-[#1E293B]">
           {PROJECTS.map((project, idx) => {
             const isImageRight = idx % 2 === 1;
             return (
@@ -123,7 +118,7 @@ export function PortfolioSection() {
                     isImageRight ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#DBEAFE] bg-[#EFF6FF]">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2px] border border-[#1E293B] bg-[#050914]">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -140,29 +135,29 @@ export function PortfolioSection() {
                     isImageRight ? "lg:order-1" : "lg:order-2"
                   }`}
                 >
-                  <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
+                  <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
                     {project.num} / {project.category}
                   </span>
 
-                  <h3 className="font-serif mt-3 text-2xl sm:text-3xl md:text-4xl font-normal leading-[1.15] text-[#0B1E3A]">
+                  <h3 className="mt-3 text-2xl sm:text-3xl font-bold tracking-tight text-white">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-sm md:text-base leading-[1.7] text-[#334155]">
+                  <p className="mt-4 text-sm md:text-base leading-relaxed text-[#94A3B8]">
                     {project.description}
                   </p>
 
-                  {/* Tags as plain text separated by dots */}
-                  <div className="mt-6 text-xs text-[#64748B]">
+                  {/* Tags as plain text */}
+                  <div className="mt-6 text-xs text-[#94A3B8]">
                     {project.tags.join(" · ")}
                   </div>
 
                   {/* Metrics as small plain row with hairlines */}
-                  <div className="mt-6 w-full border-y border-[#DBEAFE] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div className="mt-6 w-full border-y border-[#1E293B] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
                     {project.metrics.map((m, i) => (
                       <div key={i}>
-                        <strong className="font-semibold text-[#0B1E3A]">{m.value}</strong>{" "}
-                        <span className="text-[#64748B]">{m.label}</span>
+                        <strong className="font-semibold text-white">{m.value}</strong>{" "}
+                        <span className="text-[#94A3B8]">{m.label}</span>
                       </div>
                     ))}
                   </div>
@@ -172,7 +167,7 @@ export function PortfolioSection() {
                     <button
                       type="button"
                       onClick={() => setSelectedProject(project)}
-                      className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#0B1E3A] hover:underline underline-offset-4"
+                      className="group inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-[#2563eb] transition-colors"
                     >
                       <span>View Project</span>
                       <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -187,26 +182,26 @@ export function PortfolioSection() {
 
       {/* Case Study Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
-          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#DBEAFE] bg-[#EFF6FF] p-8 sm:p-10 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#1E293B] bg-[#050914] p-8 sm:p-10 shadow-2xl">
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="absolute right-6 top-6 p-1 text-[#64748B] hover:text-[#0B1E3A]"
+              className="absolute right-6 top-6 p-1 text-[#94A3B8] hover:text-white"
               aria-label="Close modal"
             >
               <IconX className="size-5" />
             </button>
 
-            <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#1D4ED8]">
+            <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
               {selectedProject.num} — {selectedProject.category}
             </span>
 
-            <h3 className="font-serif mt-2 text-2xl sm:text-3xl font-normal text-[#0B1E3A]">
+            <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-white">
               {selectedProject.title}
             </h3>
 
-            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#DBEAFE]">
+            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#1E293B]">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -216,54 +211,42 @@ export function PortfolioSection() {
             </div>
 
             <div className="mt-6">
-              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B] mb-2">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#94A3B8] mb-2">
                 Overview &amp; Implementation
               </h4>
-              <p className="text-sm leading-[1.7] text-[#334155]">
+              <p className="text-sm leading-relaxed text-[#94A3B8]">
                 {selectedProject.fullOverview}
               </p>
             </div>
 
-            {/* Metrics */}
-            <div className="mt-6 border-t border-[#DBEAFE] pt-5">
-              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B] mb-3">
-                Key Performance Metrics
+            <div className="mt-6 border-t border-[#1E293B] pt-4">
+              <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#94A3B8] mb-3">
+                Key Metrics Achieved
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {selectedProject.metrics.map((m, idx) => (
-                  <div key={idx} className="border border-[#DBEAFE] bg-white p-3 rounded-[2px]">
-                    <div className="text-base font-semibold text-[#0B1E3A]">{m.value}</div>
-                    <div className="text-[11px] text-[#64748B] mt-0.5">{m.label}</div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {selectedProject.metrics.map((m, i) => (
+                  <div key={i} className="border-l border-[#1E293B] pl-3">
+                    <span className="text-lg font-bold text-white">{m.value}</span>
+                    <p className="text-[11px] text-[#94A3B8] uppercase">{m.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Tags */}
-            <div className="mt-6 border-t border-[#DBEAFE] pt-5">
-              <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#64748B]">
-                Core Tech:
-              </span>{" "}
-              <span className="text-xs text-[#0B1E3A]">
-                {selectedProject.tags.join(" · ")}
-              </span>
-            </div>
-
-            {/* Modal actions */}
-            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#DBEAFE] pt-5">
+            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#1E293B] pt-5">
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
-                className="text-xs font-medium text-[#64748B] hover:text-[#0B1E3A]"
+                className="text-xs font-medium text-[#94A3B8] hover:text-white"
               >
                 Close
               </button>
               <a
                 href="#contact"
                 onClick={() => setSelectedProject(null)}
-                className="rounded-[2px] bg-[#1D4ED8] px-5 py-2.5 text-xs font-medium text-white hover:bg-blue-700 transition-colors"
+                className="rounded-[2px] bg-[#2563eb] px-5 py-2.5 text-xs font-semibold text-white hover:bg-blue-600 transition-colors"
               >
-                Inquire About Similar Project
+                Discuss Similar Project
               </a>
             </div>
           </div>

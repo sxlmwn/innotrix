@@ -7,69 +7,64 @@ import Lenis from "lenis";
 
 const images = [
   {
-    src: "/images/gallery/web-development.jpg",
+    src: "/images/gallery/01-web-development.jpg",
     alt: "Modern high-performance web development",
     caption: "Web Development",
   },
   {
-    src: "/images/gallery/mobile-app.jpg",
+    src: "/images/gallery/02-code-screen.jpg",
+    alt: "Scalable backend code and software engineering",
+    caption: "Software Architecture",
+  },
+  {
+    src: "/images/gallery/03-developers-team.jpg",
+    alt: "Innotrix development and engineering team",
+    caption: "Engineering Team",
+  },
+  {
+    src: "/images/gallery/05-mobile-app.jpg",
     alt: "Intuitive iOS and Android mobile app interface",
     caption: "Mobile App",
   },
   {
-    src: "/images/gallery/ai-chatbot.jpg",
+    src: "/images/gallery/06-phone-in-hand.jpg",
+    alt: "High-performance smartphone digital experience",
+    caption: "Mobile Interface",
+  },
+  {
+    src: "/images/gallery/07-ai-chatbot.jpg",
     alt: "24/7 intelligent AI customer support chatbot",
     caption: "AI Chatbots",
   },
   {
-    src: "/images/gallery/ai-voice-agent.jpg",
-    alt: "AI voice calling agent and conversational intelligence",
-    caption: "Voice Agents",
+    src: "/images/gallery/09-ai-dashboard.jpg",
+    alt: "Real-time AI enterprise metrics and automated dashboard",
+    caption: "AI Analytics",
   },
   {
-    src: "/images/gallery/automation.jpg",
-    alt: "Enterprise business process automation and workflows",
-    caption: "Workflow Automation",
+    src: "/images/gallery/10-data-analytics.jpg",
+    alt: "Executive data reporting and conversion analytics",
+    caption: "Data Insights",
   },
   {
-    src: "/images/gallery/digital-marketing.jpg",
-    alt: "High-ROI digital marketing and Performance Max campaigns",
+    src: "/images/gallery/12-marketing-charts.jpg",
+    alt: "Results-driven performance digital marketing",
     caption: "Digital Marketing",
   },
   {
-    src: "/images/gallery/data-analytics.jpg",
-    alt: "Real-time executive data analytics and reporting dashboard",
-    caption: "Data Analytics",
-  },
-  {
-    src: "/images/gallery/cloud.jpg",
-    alt: "Scalable cloud infrastructure and API integrations",
+    src: "/images/gallery/13-cloud-earth.jpg",
+    alt: "Global cloud infrastructure and server networks",
     caption: "Cloud Solutions",
   },
   {
-    src: "/images/gallery/ui-ux-design.jpg",
-    alt: "Bespoke UI/UX design and interaction prototyping",
+    src: "/images/gallery/15-ui-ux-design.jpg",
+    alt: "Bespoke user interface and design systems",
     caption: "UI/UX Design",
   },
   {
-    src: "/images/gallery/ecommerce.jpg",
-    alt: "High-converting ecommerce storefront and checkout",
+    src: "/images/gallery/17-ecommerce.jpg",
+    alt: "Conversion-optimized ecommerce shopping platform",
     caption: "E-Commerce",
-  },
-  {
-    src: "/images/gallery/team-working.jpg",
-    alt: "Innotrix engineers and creatives collaborating",
-    caption: "Engineering Team",
-  },
-  {
-    src: "/images/gallery/dashboard.jpg",
-    alt: "Intelligent analytics dashboard and enterprise metrics",
-    caption: "AI SaaS Software",
-  },
-  {
-    src: "/images/gallery/fashion-ecommerce.jpg",
-    alt: "Performance fashion brand ecommerce campaign",
-    caption: "Growth Strategy",
   },
 ];
 
@@ -86,7 +81,7 @@ const Column = ({ images, y }: ColumnProps) => {
     >
       {images.map((img, i) => (
         <div key={i} className="flex flex-col">
-          <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#DBEAFE]/40 border border-[#DBEAFE]">
+          <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#050914] border border-[#1E293B]">
             <Image
               src={img.src}
               alt={img.alt}
@@ -95,7 +90,7 @@ const Column = ({ images, y }: ColumnProps) => {
               className="object-cover"
             />
           </div>
-          <span className="mt-2 text-[12px] font-medium text-[#64748B]">
+          <span className="mt-2 text-[12px] font-medium text-[#94A3B8]">
             {img.caption}
           </span>
         </div>
@@ -152,13 +147,13 @@ export function Skiper30() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#EFF6FF] text-[#0B1E3A]">
+    <section className="relative w-full bg-[#050914] text-white">
       {/* Top spacer screen */}
       <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center">
-        <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
+        <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#94A3B8]">
           Selected Portfolio Work
         </span>
-        <p className="mt-2 text-xs md:text-sm text-[#64748B]">
+        <p className="mt-2 text-xs md:text-sm text-[#94A3B8]">
           scroll down to see
         </p>
       </div>
@@ -166,20 +161,20 @@ export function Skiper30() {
       {/* Parallax 4-column gallery container */}
       <div
         ref={galleryRef}
-        className="gallery relative flex h-[175vh] w-full gap-4 md:gap-6 overflow-hidden bg-[#EFF6FF] px-4 md:px-10"
+        className="gallery relative flex h-[175vh] w-full gap-4 md:gap-6 overflow-hidden bg-[#050914] px-4 md:px-10"
       >
-        <Column images={[images[0], images[1], images[2], images[12]]} y={y} />
+        <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
 
       {/* Bottom spacer screen */}
-      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center border-b border-[#DBEAFE]">
-        <p className="text-xs md:text-sm text-[#64748B]">
-          scroll Up to see
+      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center border-b border-[#1E293B]">
+        <p className="text-xs md:text-sm text-[#94A3B8]">
+          scroll up to see
         </p>
-        <span className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-[#64748B]">
+        <span className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-[#94A3B8]">
           Digital Craft &amp; Engineering
         </span>
       </div>

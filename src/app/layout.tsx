@@ -1,18 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -48,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fraunces.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col bg-[#050914] text-white font-sans antialiased selection:bg-white selection:text-black">
         {children}
