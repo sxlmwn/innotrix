@@ -6,16 +6,10 @@
 }
 
 @layer base {
-  * {
-    border-color: #DBEAFE;
-  }
   body {
-    background-color: #EAF3FF;
-    color: #334155;
+    background-color: #050914;
+    color: #ffffff;
     font-family: var(--font-sans);
-  }
-  h1, h2, h3, h4 {
-    color: #0B1E3A;
   }
 }
 

@@ -50,7 +50,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${fraunces.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-[#EAF3FF] text-[#334155] font-sans antialiased selection:bg-[#1D4ED8] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#050914] text-white font-sans antialiased selection:bg-white selection:text-black">
         {children}
       </body>
     </html>
