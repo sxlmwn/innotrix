@@ -6,7 +6,7 @@ export function FloatingWhatsApp() {
   return (
     <aside
       aria-label="WhatsApp quick contact"
-      className="fixed bottom-16 sm:bottom-6 right-3.5 sm:right-6 z-50"
+      className="fixed bottom-20 sm:bottom-6 right-3.5 sm:right-6 z-50"
     >
       <a
         href="https://wa.me/971502891421"

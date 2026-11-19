@@ -21,7 +21,8 @@ export default function HomePage() {
       <SiteHeader />
 
       {/* 1. Hero Section (v5, untouched) */}
-      <div id="hero" className="w-full">
+      <div id="home" className="w-full">
+        <span id="hero" className="sr-only" />
         <HeroSection />
       </div>
 
