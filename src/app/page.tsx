@@ -16,17 +16,17 @@ import FloatingWhatsApp from "@/components/floating-whatsapp";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen w-full bg-[#050914] text-white">
+    <main className="relative min-h-screen w-full bg-[#050914] text-white overflow-x-hidden pb-24 sm:pb-28">
       {/* Top Fixed Header */}
       <SiteHeader />
 
       {/* 1. Hero Section (v5, untouched) */}
-      <div id="hero">
+      <div id="hero" className="w-full">
         <HeroSection />
       </div>
 
       {/* 2. Parallax Image Gallery */}
-      <div id="gallery">
+      <div id="gallery" className="w-full">
         <Skiper30 />
       </div>
 

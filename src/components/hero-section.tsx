@@ -4,7 +4,7 @@ import GhostFibers from "./ghost-fibers/GhostFibers";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#050914] text-white">
+    <section className="relative flex min-h-[600px] sm:min-h-[700px] lg:min-h-screen w-full items-center justify-center overflow-hidden bg-[#050914] text-white py-16 sm:py-20 lg:py-28">
       {/* 1. GhostFibers background — full hero background, absolute, behind text, non-blocking */}
       <div
         className="pointer-events-none absolute inset-0 z-0 h-full w-full"
@@ -41,19 +41,19 @@ export function HeroSection() {
       </div>
 
       {/* Hero content — Centred */}
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-col items-center px-4 sm:px-6 lg:px-10 text-center">
         {/* 2. "Innotrix" — bold, large, white, centred */}
-        <h1 className="text-6xl font-bold tracking-tight text-white sm:text-7xl md:text-8xl lg:text-9xl">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-white break-words">
           Innotrix
         </h1>
 
         {/* 3. One 3–4 word line */}
-        <p className="mt-4 text-xl font-medium tracking-wide text-white/90 sm:text-2xl md:text-3xl">
+        <p className="mt-4 text-xl sm:text-2xl lg:text-3xl font-medium tracking-wide text-white/90 break-words">
           Building the Future
         </p>
 
         {/* 4. 1–2 lines of detail */}
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-300 sm:text-base md:text-lg">
+        <p className="mt-5 sm:mt-6 max-w-2xl text-base sm:text-lg leading-[1.65] text-[#94A3B8] break-words">
           We build intelligent digital solutions that drive growth — AI-powered software, high-performance websites and results-driven marketing.
         </p>
       </div>

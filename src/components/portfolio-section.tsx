@@ -86,19 +86,19 @@ export function PortfolioSection() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="portfolio" className="w-full bg-[#050914] py-24 md:py-32 text-white border-t border-[#1E293B]">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
+    <section id="portfolio" className="w-full bg-[#050914] py-16 sm:py-20 lg:py-28 text-white border-t border-[#1E293B]">
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-[#1E293B] gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between pb-8 sm:pb-12 border-b border-[#1E293B] gap-4 sm:gap-6">
           <div>
             <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
               03 — SELECTED CASE STUDIES
             </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white break-words">
               Featured Work
             </h2>
           </div>
-          <p className="max-w-md text-sm md:text-base leading-relaxed text-[#94A3B8]">
+          <p className="max-w-md text-base sm:text-lg leading-relaxed text-[#94A3B8] break-words">
             Selected implementations across AI, high-performance software, and growth marketing.
           </p>
         </div>
@@ -110,7 +110,7 @@ export function PortfolioSection() {
             return (
               <div
                 key={project.id}
-                className="py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
+                className="py-12 sm:py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center"
               >
                 {/* Image */}
                 <div
@@ -124,7 +124,7 @@ export function PortfolioSection() {
                       alt={project.title}
                       fill
                       sizes="(max-width: 1024px) 100vw, 55vw"
-                      className="object-cover"
+                      className="object-cover w-full h-auto"
                     />
                   </div>
                 </div>
@@ -139,21 +139,21 @@ export function PortfolioSection() {
                     {project.num} / {project.category}
                   </span>
 
-                  <h3 className="mt-3 text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                  <h3 className="mt-2.5 sm:mt-3 text-2xl sm:text-3xl font-bold tracking-tight text-white break-words">
                     {project.title}
                   </h3>
 
-                  <p className="mt-4 text-sm md:text-base leading-relaxed text-[#94A3B8]">
+                  <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-relaxed text-[#94A3B8] break-words">
                     {project.description}
                   </p>
 
                   {/* Tags as plain text */}
-                  <div className="mt-6 text-xs text-[#94A3B8]">
+                  <div className="mt-5 text-xs text-[#94A3B8] break-words">
                     {project.tags.join(" · ")}
                   </div>
 
                   {/* Metrics as small plain row with hairlines */}
-                  <div className="mt-6 w-full border-y border-[#1E293B] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div className="mt-5 w-full border-y border-[#1E293B] py-3.5 flex flex-wrap items-center justify-between gap-3 text-xs">
                     {project.metrics.map((m, i) => (
                       <div key={i}>
                         <strong className="font-semibold text-white">{m.value}</strong>{" "}
@@ -163,7 +163,7 @@ export function PortfolioSection() {
                   </div>
 
                   {/* Working View Project Button */}
-                  <div className="mt-8">
+                  <div className="mt-6 sm:mt-8">
                     <button
                       type="button"
                       onClick={() => setSelectedProject(project)}
@@ -183,11 +183,11 @@ export function PortfolioSection() {
       {/* Case Study Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
-          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#1E293B] bg-[#050914] p-8 sm:p-10 shadow-2xl">
+          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[2px] border border-[#1E293B] bg-[#050914] p-5 sm:p-8 shadow-2xl">
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="absolute right-6 top-6 p-1 text-[#94A3B8] hover:text-white"
+              className="absolute right-4 top-4 sm:right-6 sm:top-6 p-1 text-[#94A3B8] hover:text-white"
               aria-label="Close modal"
             >
               <IconX className="size-5" />
@@ -197,43 +197,43 @@ export function PortfolioSection() {
               {selectedProject.num} — {selectedProject.category}
             </span>
 
-            <h3 className="mt-2 text-2xl sm:text-3xl font-bold text-white">
+            <h3 className="mt-2 text-xl sm:text-2xl md:text-3xl font-bold text-white break-words">
               {selectedProject.title}
             </h3>
 
-            <div className="relative mt-6 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#1E293B]">
+            <div className="relative mt-5 aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-[#1E293B]">
               <Image
                 src={selectedProject.image}
                 alt={selectedProject.title}
                 fill
-                className="object-cover"
+                className="object-cover w-full h-auto"
               />
             </div>
 
-            <div className="mt-6">
+            <div className="mt-5">
               <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#94A3B8] mb-2">
                 Overview &amp; Implementation
               </h4>
-              <p className="text-sm leading-relaxed text-[#94A3B8]">
+              <p className="text-sm leading-relaxed text-[#94A3B8] break-words">
                 {selectedProject.fullOverview}
               </p>
             </div>
 
-            <div className="mt-6 border-t border-[#1E293B] pt-4">
+            <div className="mt-5 border-t border-[#1E293B] pt-4">
               <h4 className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#94A3B8] mb-3">
                 Key Metrics Achieved
               </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                 {selectedProject.metrics.map((m, i) => (
                   <div key={i} className="border-l border-[#1E293B] pl-3">
-                    <span className="text-lg font-bold text-white">{m.value}</span>
+                    <span className="text-base sm:text-lg font-bold text-white">{m.value}</span>
                     <p className="text-[11px] text-[#94A3B8] uppercase">{m.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="mt-8 flex items-center justify-end gap-4 border-t border-[#1E293B] pt-5">
+            <div className="mt-6 sm:mt-8 flex items-center justify-end gap-3 sm:gap-4 border-t border-[#1E293B] pt-4 sm:pt-5">
               <button
                 type="button"
                 onClick={() => setSelectedProject(null)}
@@ -244,7 +244,7 @@ export function PortfolioSection() {
               <a
                 href="#contact"
                 onClick={() => setSelectedProject(null)}
-                className="rounded-[2px] bg-[#2563eb] px-5 py-2.5 text-xs font-semibold text-white hover:bg-blue-600 transition-colors"
+                className="rounded-[2px] bg-[#2563eb] px-4 py-2 text-xs font-semibold text-white hover:bg-blue-600 transition-colors whitespace-nowrap"
               >
                 Discuss Similar Project
               </a>

@@ -40,9 +40,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} scroll-smooth`}
+      className={`${inter.variable} scroll-smooth overflow-x-hidden`}
     >
-      <body className="min-h-screen flex flex-col bg-[#050914] text-white font-sans antialiased selection:bg-white selection:text-black">
+      <body className="min-h-screen flex flex-col bg-[#050914] text-white font-sans antialiased selection:bg-white selection:text-black overflow-x-hidden">
         {children}
       </body>
     </html>

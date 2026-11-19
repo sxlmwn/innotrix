@@ -71,26 +71,27 @@ const images = [
 interface ColumnProps {
   images: typeof images;
   y: MotionValue<number>;
+  widthClass?: string;
 }
 
-const Column = ({ images, y }: ColumnProps) => {
+const Column = ({ images, y, widthClass = "w-full" }: ColumnProps) => {
   return (
     <motion.div
-      className="column relative flex h-full w-1/4 min-w-0 flex-1 flex-col gap-6 md:gap-8"
+      className={`column relative flex h-full ${widthClass} min-w-0 flex-1 flex-col gap-4 sm:gap-6 lg:gap-8`}
       style={{ y }}
     >
       {images.map((img, i) => (
         <div key={i} className="flex flex-col">
-          <div className="relative h-52 sm:h-64 md:h-80 lg:h-96 w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#050914] border border-[#1E293B]">
+          <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full flex-shrink-0 overflow-hidden rounded-[2px] bg-[#050914] border border-[#1E293B]">
             <Image
               src={img.src}
               alt={img.alt}
               fill
-              sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 25vw"
-              className="object-cover"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover w-full h-auto"
             />
           </div>
-          <span className="mt-2 text-[12px] font-medium text-[#94A3B8]">
+          <span className="mt-2 text-[11px] sm:text-[12px] font-medium text-[#94A3B8] truncate">
             {img.caption}
           </span>
         </div>
@@ -109,10 +110,10 @@ export function Skiper30() {
   });
 
   const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
-  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * 1.5]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 2.5]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.2]);
+  const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 2.2]);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -147,34 +148,63 @@ export function Skiper30() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#050914] text-white">
+    <section className="relative w-full bg-[#050914] text-white overflow-hidden">
       {/* Top spacer screen */}
-      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center">
-        <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-[#94A3B8]">
+      <div className="flex py-10 sm:py-16 lg:py-20 flex-col items-center justify-center px-4 text-center">
+        <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
           Selected Portfolio Work
         </span>
-        <p className="mt-2 text-xs md:text-sm text-[#94A3B8]">
+        <p className="mt-2 text-xs sm:text-sm text-[#94A3B8]">
           scroll down to see
         </p>
       </div>
 
-      {/* Parallax 4-column gallery container */}
-      <div
-        ref={galleryRef}
-        className="gallery relative flex h-[175vh] w-full gap-4 md:gap-6 overflow-hidden bg-[#050914] px-4 md:px-10"
-      >
-        <Column images={[images[0], images[1], images[2]]} y={y} />
-        <Column images={[images[3], images[4], images[5]]} y={y2} />
-        <Column images={[images[6], images[7], images[8]]} y={y3} />
-        <Column images={[images[9], images[10], images[11]]} y={y4} />
+      {/* Fluid container */}
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
+        {/* Parallax gallery container with responsive heights */}
+        <div
+          ref={galleryRef}
+          className="gallery relative flex h-[90vh] sm:h-[130vh] lg:h-[175vh] w-full gap-3 sm:gap-5 lg:gap-6 overflow-hidden bg-[#050914]"
+        >
+          {/* Desktop: 4 columns */}
+          <div className="hidden lg:flex w-full h-full gap-6">
+            <Column images={[images[0], images[1], images[2]]} y={y} widthClass="w-1/4" />
+            <Column images={[images[3], images[4], images[5]]} y={y2} widthClass="w-1/4" />
+            <Column images={[images[6], images[7], images[8]]} y={y3} widthClass="w-1/4" />
+            <Column images={[images[9], images[10], images[11]]} y={y4} widthClass="w-1/4" />
+          </div>
+
+          {/* Tablet: 2 columns */}
+          <div className="hidden sm:flex lg:hidden w-full h-full gap-5">
+            <Column
+              images={[images[0], images[1], images[2], images[3], images[4], images[5]]}
+              y={y}
+              widthClass="w-1/2"
+            />
+            <Column
+              images={[images[6], images[7], images[8], images[9], images[10], images[11]]}
+              y={y2}
+              widthClass="w-1/2"
+            />
+          </div>
+
+          {/* Phone: 1 column */}
+          <div className="flex sm:hidden w-full h-full">
+            <Column
+              images={[images[0], images[3], images[6], images[9]]}
+              y={y}
+              widthClass="w-full"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Bottom spacer screen */}
-      <div className="flex h-[20vh] md:h-[28vh] flex-col items-center justify-center px-4 text-center border-b border-[#1E293B]">
-        <p className="text-xs md:text-sm text-[#94A3B8]">
+      <div className="flex py-10 sm:py-16 lg:py-20 flex-col items-center justify-center px-4 text-center border-b border-[#1E293B]">
+        <p className="text-xs sm:text-sm text-[#94A3B8]">
           scroll up to see
         </p>
-        <span className="mt-2 text-[11px] font-medium tracking-[0.16em] uppercase text-[#94A3B8]">
+        <span className="mt-2 text-[11px] font-semibold tracking-[0.16em] uppercase text-[#94A3B8]">
           Digital Craft &amp; Engineering
         </span>
       </div>

@@ -29,33 +29,33 @@ export function WhyUsSection() {
   ];
 
   return (
-    <section id="why-us" className="w-full bg-[#050914] py-24 md:py-32 text-white border-t border-[#1E293B]">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <section id="why-us" className="w-full bg-[#050914] py-16 sm:py-20 lg:py-28 text-white border-t border-[#1E293B]">
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column: Heading */}
           <div className="lg:col-span-5">
             <span className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[#2563eb]">
               05 — THE INNOTRIX STANDARD
             </span>
-            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white break-words">
               Why Choose Innotrix
             </h2>
-            <p className="mt-4 text-sm md:text-base leading-relaxed text-[#94A3B8]">
+            <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-[#94A3B8] break-words">
               We merge deep technical mastery with direct commercial focus to deliver solutions that outperform expectations.
             </p>
           </div>
 
           {/* Right Column: 2-column list, title + one line each, no cards */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-12 border-t lg:border-t-0 border-[#1E293B] pt-8 lg:pt-0">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-6 sm:gap-x-10 lg:gap-x-12 border-t lg:border-t-0 border-[#1E293B] pt-8 lg:pt-0">
             {points.map((point, idx) => (
               <div key={idx} className="flex flex-col">
                 <span className="text-[11px] font-mono text-[#94A3B8] mb-1">
                   0{idx + 1}
                 </span>
-                <h3 className="text-base font-bold text-white">
+                <h3 className="text-base font-bold text-white break-words">
                   {point.title}
                 </h3>
-                <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-[#94A3B8]">
+                <p className="mt-1.5 text-xs sm:text-[13px] leading-relaxed text-[#94A3B8] break-words">
                   {point.desc}
                 </p>
               </div>
